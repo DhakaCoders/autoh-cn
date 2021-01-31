@@ -16,15 +16,16 @@ a, a:hover, a:focus, button:hover, button:focus{
 }
 
 body {
-    background: #f8f8f8;
-    color: #000000;
+    background: #ffffff;
+    color: #4e4e50;
     font-size: 18px;
-    line-height: 24px;
-     font-family: 'Candara';
+    line-height: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 p{
 	line-height: 1.2;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 ::selection {
   color: #fff;
@@ -40,11 +41,9 @@ data-value = normal*/
 /**
 Containers fluid
 */
-/*.container-fluid{
+.container-fluid{
 	padding-left: 30px;
 	padding-right: 30px;
-	margin-left: 2%;
-	margin-right: 2%;
   	width: auto;
 }
 .container-fluid .row{
@@ -58,7 +57,7 @@ Containers fluid
 .container-fluid .row .col-xs-1, .container-fluid .row .col-xs-10, .container-fluid .row .col-xs-11, .container-fluid .row .col-xs-12, .container-fluid .row .col-xs-2, .container-fluid .row .col-xs-3, .container-fluid .row .col-xs-4, .container-fluid .row .col-xs-5, .container-fluid .row .col-xs-6, .container-fluid .row .col-xs-7, .container-fluid .row .col-xs-8, .container-fluid .row .col-xs-9{
 	padding-left: 30px;
 	padding-right: 30px;
-}*/
+}
 
 
 /**
@@ -96,7 +95,7 @@ Containers
 
 }
 .container{
-	max-width: 1200px;
+	max-width: 1145px;
 	width: 100%;
 }
 .container-md{
@@ -168,6 +167,17 @@ img{
 	background-size: cover!important;
 	background-repeat: no-repeat!important;
 	background-position: center center!important;
+}
+
+em{
+	font-weight: 700;
+	font-style: italic;
+}
+u{
+	text-decoration: underline;
+}
+strong{
+	font-weight: 500;
 }
 
 ul.reset-list,

@@ -170,6 +170,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
   }, false);
 })();
 
+/*noyon*/
+
+
+
+/*shariful*/
+
     new WOW().init();
 
 })(jQuery);
