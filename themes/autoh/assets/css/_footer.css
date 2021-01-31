@@ -1,0 +1,18 @@
+.footer-wrp{
+	margin-top: 160px;
+}
+
+.ftr-top{
+	padding-top: 22px;
+	background: #dc1f2e;
+	border-bottom: 11px solid #d3d3d3;
+}
+
+.ftr-top-lft{
+	float: left;
+	width: 70%;
+}
+.ftr-top-rgt{
+	float: right;
+	width: 30%;
+}
