@@ -63,6 +63,12 @@
 	padding-top: 15px;
 	padding-bottom: 10px;
 }
+.ath-car-grd-item-des-title a{
+	color: #2e2e2e;
+}
+.ath-car-grd-item-des-title a:hover{
+	color: #dc1f2e;
+}
 .ath-car-grd-item-des p{
 	padding-left: 15px;
 	margin-bottom: 15px;
@@ -178,6 +184,9 @@
 	color: #132f40;
 	text-align: center;
 	font-weight: 700;
+}
+.ath-car-btn-inr em a:hover{
+	color: #dc1f2e;
 }
 
 .ath-microcar-sec{
