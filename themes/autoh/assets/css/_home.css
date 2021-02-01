@@ -1,15 +1,21 @@
 .banner-sec{
-
-}
-.banner-sec > div.banner-cntlr{
 	background-color: #132f40;
+	position: relative;
 }
-.has-banner > div.banner-cntlr{
-	display: block;
-	min-height: 615px;
+.banner-sec.has-banner{
+	background: transparent;
+	height: 615px;
 }
-.has-banner .banner-inr{
+.banner-sec > div.banner-bg{
 	display: none;
+}
+.banner-sec.has-banner > div.banner-bg{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .banner-desc{
 	position: relative;
