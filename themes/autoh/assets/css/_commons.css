@@ -168,10 +168,14 @@ img{
 	background-repeat: no-repeat!important;
 	background-position: center center!important;
 }
+
 p a{
 	display: inline-block;
 	text-decoration: underline;
 	color: #dc1f2e;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 p a:hover{
 	color: #303037;

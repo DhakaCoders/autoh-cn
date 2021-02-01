@@ -172,7 +172,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*noyon*/
 
-
+  $('nav.main-nav > ul > li.menu-item-has-children').hover(function(){
+    var offsetlft = $(this).offset().left;
+    $('.mega-menu-cntrl').css("padding-left", offsetlft)
+  });
 
 /*shariful*/
 
