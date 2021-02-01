@@ -63,3 +63,87 @@
 .hm-contact-items{
 	margin-left: auto;
 }
+.hm-contact-items ul{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+}
+.hm-contact-items ul li{
+	padding: 0 10px;
+	line-height: 1;
+}
+.hm-contact-item{
+	position: relative;
+	padding: 5px 17px 5px 82px;
+	min-height: 52px;
+	background: #132f40;
+
+}
+.hm-contact-item i{
+	position: absolute;
+	top: 5px;
+	left: 20px;
+}
+.hm-contact-item i img{
+	max-height: 42px;
+}
+.bg-sky{
+	background: #0d6ec1;
+}
+.bg-green{
+	background: #0dc143;
+}
+.bg-blue{
+	background: #132f40;
+}
+.hm-contact-item-sub-title{
+	display: inline-block;
+	color: #ffffff;
+	font-size: 13px;
+	margin-bottom: 3px;
+	line-height: 1;
+}
+.hm-contact-item-title{
+	display: block;
+	color: #ffffff;
+	font-size: 27px;
+	margin-bottom: 0;
+	line-height: 1;
+}
+.workshop-sec{
+	padding: 55px 0 60px 0;
+}
+.Workshop-cntlr{
+
+}
+.workshop-desc{
+	padding-bottom: 16px;
+}
+.Workshop-title{
+
+}
+.Workshop-tags{
+
+}
+.Workshop-tags ul{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -13px;
+}
+.Workshop-tags ul li{
+	padding: 0 13px;
+	margin: 0 0 28px 0;
+}
+.Workshop-tags ul li a,
+.Workshop-tags ul li span,
+.Workshop-tags ul li a span{
+	display: inline-block;
+	padding: 10px 26px 9px 23px;
+	background: #132f40;
+	color: #fff;
+	margin-bottom: 0;
+	line-height: 1;
+	font-size: 28px;
+	text-transform: capitalize;
+}
