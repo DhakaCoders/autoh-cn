@@ -34,24 +34,22 @@
 </head>
 <body>
 <header class="header">
-  <div class="header-left">
-    <div class="hdr-logo">
-      <a href="#">
-        <img src="assets/images/logo.png" alt="">
-      </a>
-    </div>
-  </div>
   <div class="header-top">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="hdr-top-inr">
+            <div class="hdr-logo">
+              <a href="#">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+            </div>
             <ul class="reset-list">
               <li><a href="mailto:info@autobedrijf-hazenberg.nl">
                 <span> info@autobedrijf-hazenberg.nl</span>
                 <i><img src="assets/images/mail-icon.png" alt=""></i>
               </a></li>
-              <li><a href="tell:0592541212">
+              <li class="hdr-mail"><a href="tel:0592541212">
                 <span>  0592 - 541 212</span>
                 <i><img src="assets/images/tell-icon.png" alt=""></i>
               </a></li>
@@ -61,15 +59,33 @@
       </div>
     </div>
   </div>
-  <div class="header-bottom">
+  <div class="header-menu">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="hdr-btm-inr">
             <nav class="main-nav">
               <ul class="clearfix reset-list">
-                <li><a href="#">home</a></li>
-                <li><a href="#">werkplaats</a></li>
+                <li class="current-menu-item"><a href="#">home</a></li>
+                <li class="menu-item-has-children">
+                  <a href="#">werkplaats</a>
+                  <div class="mega-menu-cntrl">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="mega-menu">
+                            <ul class="reset-list mega-menu-items">
+                              <li><a href="#">onderhoud</a></li>
+                              <li><a href="#">apk</a></li>
+                              <li><a href="#">reparaties</a></li>
+                              <li><a href="#">bandenwissel</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
                 <li><a href="#">auto aanbod</a></li>
                 <li><a href="#">brommobielen</a></li>
                 <li><a href="#">over ons</a></li>
@@ -85,22 +101,75 @@
 </header>
 
 
-<section class="main-content">
-  <div class="container">
+<section class="banner-sec has-banner">
+  <div class="banner-cntlr inline-bg clearfix" style="background-image: url('assets/images/banner.jpg');">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-6">
-
+        <div class="col-md-12">
+          <div class="banner-desc clearfix">
+            <h1 class="banner-title">Auto Aanbod</h1>
+          </div>
         </div>
       </div>
+    </div>
   </div>    
 </section>
 
-<ol>
-  <li class="facebook"><a href="#"></a></li>
-</ol>
+<section class="company-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="company-sec-inr">
+          <h2 class="company-title fl-h2">Jouw autobedrijf zit in Vries</h2>
+          <p>Autobedrijf Hazenberg BV heeft alles in huis op het gebied van mobiliteit. Wij kunnen u een zeer breed pakket van diensten aanbieden. Al meer dan 40 jaar zijn wij gevestigd in Vries. Wij zijn een universeel BOVAG autobedrijf, dat alle voorkomende werkzaamheden uitvoert. Laat u zich adviseren door <a href="#">onze experts</a>.</p>
+          <p>Voor o.a. onderhoud, APK, schade en airco service, zowel aan personenauto’s als aan bedrijfswagens, bent u bij ons aan het juiste adres. Onze monteurs zijn goed opgeleid, ervaren en zeer gemotiveerd en onderhouden alle merken. Onze deskundige vakspecialisten en onze uitgebreide technische apparatuur zijn altijd up-to-date. Wij hebben 3 auto-elektronica specialisten aan het werk. Tezamen met onze diagnosetesters is geen probleem te moeilijk. Een uitgebreide database met technische informatie bezitten we uiteraard ook.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hm-contact-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hm-contact-cntlr">
+          <div class="hm-contact-desc">
+            <p><em>Contact met jouw autobedrijf!</em></p>
+          </div>
+          <div class="hm-contact-items">
+            <ul class="reset-list">
+              <li>
+                <div class="hm-contact-item">
+                  <i><img src="assets/images/cn-mbl-icon.png" alt=""></i>
+                  <strong class="hm-contact-item-sub-title">0592-541212</strong>
+                  <div class="hm-contact-item-title">Bel ons</div>
+                </div>
+              </li>
+
+               <li>
+                <div class="hm-contact-item">
+                  <i><img src="assets/images/cn-mbl-icon.png" alt=""></i>
+                  <strong class="hm-contact-item-sub-title">verstuur een</strong>
+                  <div class="hm-contact-item-title">E-mail</div>
+                </div>
+              </li>
+
+               <li>
+                <div class="hm-contact-item">
+                  <i><img src="assets/images/cn-mbl-icon.png" alt=""></i>
+                  <strong class="hm-contact-item-sub-title">stuur ons een</strong>
+                  <div class="hm-contact-item-title">Whatsapp</div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer-wrp">
   <div class="container">
