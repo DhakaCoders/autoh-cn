@@ -131,19 +131,27 @@
 	-ms-transform: translate(-50%,-50%);
 	padding-right: 25px;
 	padding-top: 12px;
-	display: none;
+	padding-bottom: 10px;
+	width: 230px;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	visibility: hidden;
+	opacity: 0;
 }
 .ath-cgi-hover-img{
 	position: absolute;
-	top: 0;
+	top: -10px;
 	left: 12px;
+	z-index: 12;
 }
 .ath-cgi-hover-img img{
 	max-width: 72px;
 }
 
 .ath-cgi-hover-des{
-	
+	display: inline-block;
+	vertical-align: baseline;
 }
 .ath-cgi-hover-des a{
 	display: inline-block;
@@ -151,6 +159,16 @@
 	font-size: 19px;
 	font-weight: 400;
 	color: #2e2e2e;
+	line-height: 1;
+}
+
+
+.ath-car-grd-item:hover .ath-car-grd-item-img img{
+	opacity: 0.6;
+}
+.ath-car-grd-item:hover .ath-cgi-hover{
+	visibility: visible;
+	opacity: 1;
 }
 
 

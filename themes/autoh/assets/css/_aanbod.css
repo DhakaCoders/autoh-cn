@@ -5,6 +5,9 @@
 .aanbod-ctlr .ath-car-offer-enty-hdr-inr p{
 	margin-bottom: 12px;
 }
+.aanbod-ctlr .ath-coeh-title{
+	margin-bottom: 20px;
+}
 
 .ath-car-offer-link span{
 	display: inline-block;

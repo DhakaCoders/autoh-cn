@@ -186,6 +186,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
 
+  $(window).resize(function(){
+    $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
+  });
+
 
 
     new WOW().init();
