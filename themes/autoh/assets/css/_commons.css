@@ -168,9 +168,15 @@ img{
 	background-repeat: no-repeat!important;
 	background-position: center center!important;
 }
-
+p a{
+	display: inline-block;
+	text-decoration: underline;
+	color: #dc1f2e;
+}
+p a:hover{
+	color: #303037;
+}
 em{
-	font-weight: 700;
 	font-style: italic;
 }
 u{

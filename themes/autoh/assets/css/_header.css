@@ -1,22 +1,23 @@
 .header{
 	position: relative;
 }
-.header-left{
-	position: absolute;
-	top: 0;
-	left: 0;
+
+.header-top{
+	
+	background: #ffffff;
+}
+.hdr-top-inr{
+	position: relative;
+	padding: 18px 0 19px 0;
 }
 .hdr-logo{
-
+	position: absolute;
+	top: 9px;
+	left: 0;
+	z-index: 13;
 }
 .hdr-logo a{
 	display: inline-block;
-}
-.header-top{
-
-}
-.hdr-top-inr{
-
 }
 .hdr-top-inr ul{
 	display: flex;
@@ -27,6 +28,7 @@
 }
 .hdr-top-inr ul li{
 	padding: 0 22px;
+	line-height: 1;
 }
 .hdr-top-inr ul li a{
 	display: inline-block;
@@ -40,18 +42,22 @@
 	padding-left: 16px;
 }
 .hdr-top-inr ul li a:hover{
-	color: orange;
+	color: #dc1f2e;
 }
 .hdr-top-inr ul li a i{
 	position: absolute;
 	top: 50%;
 	left: 0;
+	margin: -1px 0 0 0;
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 }
 
+.header-menu{
+	background: #eff0f0;
+}
 
 
 nav.main-nav > ul{
@@ -59,9 +65,10 @@ nav.main-nav > ul{
 	align-items: center;
 	justify-content: flex-end;
 	flex-wrap: wrap;
+	padding-top: 11px;
 }
 nav.main-nav > ul > li{
-	position: relative;
+	line-height: 1;
 }
 nav.main-nav > ul > li > a{
 	display: inline-block;
@@ -69,6 +76,10 @@ nav.main-nav > ul > li > a{
 	margin-left: 15px;
 	margin-right: 15px;
 	position: relative;
+	padding-bottom: 11px;
+}
+nav.main-nav > ul > li > a:hover{
+	color: #dc1f2e;
 }
 nav.main-nav > ul > li:first-child > a{
 	margin-left: 0;
@@ -88,9 +99,85 @@ nav.main-nav > ul > li > a:after{
 	-ms-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
+	margin: -3px 0 0 0;
 }
 nav.main-nav > ul > li:last-child > a:after{
 	content: none;
+}
+nav.main-nav > ul > li > a:before{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	opacity: 0;
+	content: "";
+	background: #132f40;
+	height: 5px;
+	width: 0;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	z-index: 12;
+}
+nav.main-nav > ul > li > a:hover:before,
+nav.main-nav > ul > li.current-menu-item > a:before,
+nav.main-nav > ul > li.menu-item-has-children:hover > a:before{
+	width: 100%;
+	opacity: 1;
+}
+.header .container,
+.header .container .row,
+.header .container .col-md-12{
+	position: static;
+}
+
+
+.mega-menu-cntrl{
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 18px 0 17px 0;
+	top: 100%;
+	-webkit-transform: scale3d(1,0,1);
+	-ms-transform: scale3d(1,0,1);
+	transform: scale3d(1,0,1);
+	transform-origin: top;
+	opacity: 0;
+	background: #dc1f2e;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	z-index: 11;
+}
+nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
+	-webkit-transform: scale3d(1,1,1);
+	-ms-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	opacity: 1;
+}
+.mega-menu{
+
+}
+.mega-menu ul{
+	display: flex;
+	align-items: center;
+}
+.mega-menu ul li{
+	line-height: 1;
+	padding: 0 15px;
+}
+.mega-menu ul li:first-child{
+	padding-left: 0;
+}
+.mega-menu ul li:last-child{
+	padding-right: 0;
+}
+.mega-menu ul li a{
+	display: inline-block;
+	color: #fff;
+}
+.mega-menu ul li a:hover{
+	color: #132f40;
 }
 
 nav.main-nav > ul > li.current-menu-item > a{

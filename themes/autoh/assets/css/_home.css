@@ -1,0 +1,65 @@
+.banner-sec{
+
+}
+.banner-sec > div.banner-cntlr{
+	background-color: #132f40;
+}
+.has-banner > div.banner-cntlr{
+	display: block;
+	min-height: 615px;
+}
+.has-banner .banner-inr{
+	display: none;
+}
+.banner-desc{
+	position: relative;
+	min-height: 90px;
+}
+.has-banner .banner-desc{
+	display: none;
+}
+.banner-title{
+	font-size: 44px;
+	font-weight: 400;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 1;
+	margin-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.company-sec{
+	padding: 55px 0 60px 0;
+}
+.company-sec-inr{
+	color: #303037;
+}
+.company-title{
+	margin-bottom: 20px;
+}
+
+
+.hm-contact-sec{
+	background: #eff0f0;
+	border-bottom: 10px solid #d3d3d3;
+}
+.hm-contact-cntlr{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.hm-contact-desc{
+
+}
+.hm-contact-desc p{
+	margin: 0;
+	line-height: 1;
+	color: #303037;
+	font-weight: 300;
+	font-size: 16px;
+}
+.hm-contact-items{
+	margin-left: auto;
+}
