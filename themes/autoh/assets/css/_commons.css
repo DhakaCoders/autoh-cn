@@ -345,31 +345,17 @@ ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	padding-left: 35px;
-	padding-bottom: 10px;
+	padding-bottom: 22px;
 }
 .default-page-con ul li,
 ul li {
-	padding: 5px 0 5px 35px;
+	padding: 0;
 	position: relative;
-	line-height: 24px;
-}
-
-.default-page-con ul li::before, ul li::before {
-    content: "-";
-    position: absolute;
-    left: 0;
-    top: 6px;
-    width: 13px;
-    height: 18px;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
-ul li.refGridItem:before{
-	display: none;
+	line-height: 22px;
 }
 .default-page-con ol, ol {
-	padding: 0 0 0 25px;
+	margin: 0;
+	padding: 0 0 22px 10px;
 	list-style: none;
 	counter-reset: my-awesome-counter;
 	-ms-counter-reset: my-awesome-counter;
@@ -379,16 +365,16 @@ ul li.refGridItem:before{
 	counter-increment: my-awesome-counter;
 	-ms-counter-increment: my-awesome-counter;
 	-webkit-counter-increment: my-awesome-counter;
-	padding-bottom: 15px;
-	line-height: 24px;
-	padding-left: 25px;
+	padding-bottom: 0;
+	line-height: 22px;
+	padding-left: 28px;
 	position: relative;
 }
 .default-page-con ol li::before,
 ol li::before {
 	content: counter(my-awesome-counter) ".";
-	color: #CEA673;
-	font-weight: 800;
+	color: #132f40;
+	font-weight: 600;
 	font-size: 16px;
 	line-height: 1;
 	text-align: center;
