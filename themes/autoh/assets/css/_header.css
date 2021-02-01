@@ -78,7 +78,8 @@ nav.main-nav > ul > li > a{
 	position: relative;
 	padding-bottom: 11px;
 }
-nav.main-nav > ul > li > a:hover{
+nav.main-nav > ul > li > a:hover,
+nav.main-nav > ul > li.current-menu-item > a{
 	color: #dc1f2e;
 }
 nav.main-nav > ul > li:first-child > a{
@@ -120,7 +121,6 @@ nav.main-nav > ul > li > a:before{
 	z-index: 12;
 }
 nav.main-nav > ul > li > a:hover:before,
-nav.main-nav > ul > li.current-menu-item > a:before,
 nav.main-nav > ul > li.menu-item-has-children:hover > a:before{
 	width: 100%;
 	opacity: 1;
