@@ -3,7 +3,70 @@
 	background: #eff0f0;
 }
 
-
+.breadcrumbs-sec{
+	background: #f8f8f8;
+	padding: 11px 0;
+}
+.breadcrumbs-cntlr{
+	padding-left: 136px;
+}
+.breadcrumbs-cntlr ul{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.breadcrumbs-cntlr ul li{
+	padding: 0 11px;
+	position: relative;
+	line-height: 1;
+}
+.breadcrumbs-cntlr ul li:first-child{
+	padding-left: 25px;
+}
+.breadcrumbs-cntlr ul li:last-child{
+	padding-right: 0;
+}
+.breadcrumbs-cntlr ul li:after{
+	position: absolute;
+	content: "";
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url('../images/breadcump-angle-icon.png');
+    width: 4px;
+    height: 4px;
+    margin-top: 3px;
+}
+.breadcrumbs-cntlr ul li:last-child:after{
+	content: none;
+}
+.breadcrumbs-cntlr ul li:first-child a:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    margin: 1px 0 0 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 10px;
+    width: 9px;
+    background: url('../images/breadcum-icon.png');
+}
+.breadcrumbs-cntlr ul li a{
+	display: inline-block;
+	color: #454545;
+	font-size: 13px;
+	font-weight: 100;
+}
+.breadcrumbs-cntlr ul li a:hover,
+.breadcrumbs-cntlr ul li.active a{
+	color: #dc1f2e;
+}
 
 
 
