@@ -69,6 +69,7 @@ nav.main-nav > ul{
 }
 nav.main-nav > ul > li{
 	line-height: 1;
+	position: static;
 }
 nav.main-nav > ul > li > a{
 	display: inline-block;
@@ -115,9 +116,9 @@ nav.main-nav > ul > li > a:before{
 	background: #132f40;
 	height: 5px;
 	width: 0;
-	transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
+	transition: all 0.7s;
+	-ms-transition: all 0.7s;
+	-webkit-transition: all 0.7s;
 	z-index: 12;
 }
 nav.main-nav > ul > li > a:hover:before,
