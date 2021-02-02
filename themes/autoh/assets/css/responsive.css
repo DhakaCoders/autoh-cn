@@ -63,6 +63,24 @@
 	.show-xs{
 		display: block!important;
 	}
+	h1,.fl-h1{
+		font-size: 40px;
+	}
+	h2,.fl-h2{
+		font-size: 34px;
+	}
+	h3,.fl-h3{
+		font-size: 27px;
+	}
+	h4,.fl-h4{
+		font-size: 20px;
+	}
+	h5,.fl-h5{
+		font-size: 17px;
+	}
+	body{
+		font-size: 17px;
+	}
 
 }
 
