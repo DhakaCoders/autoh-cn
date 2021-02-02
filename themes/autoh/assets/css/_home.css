@@ -64,7 +64,7 @@
 	line-height: 1;
 	color: #303037;
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 24px;
 }
 .hm-contact-items{
 	margin-left: auto;
@@ -84,11 +84,17 @@
 	padding: 5px 17px 5px 82px;
 	min-height: 52px;
 	background: #132f40;
-
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 .hm-contact-item i{
 	position: absolute;
-	top: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 	left: 20px;
 }
 .hm-contact-item i img{
@@ -97,18 +103,29 @@
 .bg-sky{
 	background: #0d6ec1;
 }
+.bg-sky:hover{
+	background: #055090;
+}
 .bg-green{
 	background: #0dc143;
+}
+.bg-green:hover{
+	background: #069230;
 }
 .bg-blue{
 	background: #132f40;
 }
+.bg-blue:hover{
+	background: #215473;
+}
 .hm-contact-item-sub-title{
-	display: inline-block;
+	display: block;
 	color: #ffffff;
 	font-size: 13px;
 	margin-bottom: 3px;
 	line-height: 1;
+	text-align: center;
+	font-weight: 400;
 }
 .hm-contact-item-title{
 	display: block;
@@ -152,4 +169,71 @@
 	line-height: 1;
 	font-size: 28px;
 	text-transform: capitalize;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.Workshop-tags ul li a:hover,
+.Workshop-tags ul li span:hover,
+.Workshop-tags ul li a span:hover{
+	background: #215473;
+}
+
+
+/*responsive*/
+@media(max-width: 1199px){
+	.banner-sec.has-banner{
+		height: 500px;
+	}
+	.hm-contact-desc{
+		width: 100%;
+		margin-top: 15px;
+	}
+	.hm-contact-items ul{
+		margin: 0 -5px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	.hm-contact-items ul li{
+		padding: 0 5px;
+		margin: 0 0 10px 0;
+	}
+	.Workshop-tags ul{
+		margin: 0 -10px;
+	}
+	.Workshop-tags ul li{
+		padding: 0 10px;
+		margin-bottom: 20px;
+	}
+}
+@media(max-width: 991px){
+	.banner-sec.has-banner{
+		height: 400px;
+	}
+}
+@media(max-width: 767px){
+	.banner-sec.has-banner{
+		height: 300px;
+	}
+	.Workshop-tags ul{
+		margin: 0 -5px;
+	}
+	.Workshop-tags ul li{
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
+}
+@media(max-width: 639px){
+	
+}
+@media(max-width: 575px){
+	.banner-sec.has-banner{
+		height: 220px;
+	}
+}
+@media(max-width: 479px){
+	
+}
+@media(max-width: 359px){
+	
 }
