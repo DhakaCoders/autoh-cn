@@ -255,6 +255,9 @@
 	.banner-title{
 		font-size: 40px;
 	}
+	.Workshop-tags ul li a, .Workshop-tags ul li span, .Workshop-tags ul li a span{
+		font-size: 24px;
+	}
 }
 @media(max-width: 479px){
 	
