@@ -57,14 +57,17 @@
     width: 9px;
     background: url('../images/breadcum-icon.png');
 }
-.breadcrumbs-cntlr ul li a{
+.breadcrumbs-cntlr ul li a,
+.breadcrumbs-cntlr ul li:last-child span{
 	display: inline-block;
 	color: #454545;
 	font-size: 13px;
 	font-weight: 100;
 }
 .breadcrumbs-cntlr ul li a:hover,
-.breadcrumbs-cntlr ul li.active a{
+.breadcrumbs-cntlr ul li.active a,
+.breadcrumbs-cntlr ul li.active span
+.breadcrumbs-cntlr ul li:last-child span:hover{
 	color: #dc1f2e;
 }
 
@@ -157,4 +160,12 @@
 	color: #fff;
 	text-align: left;
 	display: block;
+}
+
+
+/*responsive*/
+@media(max-width: 767px){
+	.breadcrumbs-sec{
+		display: none;
+	}
 }

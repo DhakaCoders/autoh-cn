@@ -205,10 +205,16 @@
 		padding: 0 10px;
 		margin-bottom: 20px;
 	}
+	.banner-desc{
+		min-height: 130px;
+	}
 }
 @media(max-width: 991px){
 	.banner-sec.has-banner{
 		height: 400px;
+	}
+	.banner-desc{
+		min-height: 180px;
 	}
 }
 @media(max-width: 767px){
@@ -222,6 +228,9 @@
 		padding: 0 5px;
 		margin-bottom: 10px;
 	}
+	.banner-desc{
+		min-height: 220px;
+	}
 }
 @media(max-width: 639px){
 	
@@ -229,6 +238,9 @@
 @media(max-width: 575px){
 	.banner-sec.has-banner{
 		height: 220px;
+	}
+	.banner-title{
+		font-size: 40px;
 	}
 }
 @media(max-width: 479px){
