@@ -104,21 +104,34 @@
 	text-transform: uppercase;
 	font-weight: 800;
 }
-.ath-car-grd-item-catagory ul li span.black{
+.ath-car-grd-item-catagory ul li.black span{
 	background: #000;
 	padding: 12px 15px;
 }
-.ath-car-grd-item-catagory ul li span.navyblue{
+.ath-car-grd-item-catagory ul li.navyblue span{
 	background: #132f40;
 	padding: 12px 45px;
 }
-.ath-car-grd-item-catagory ul li span.green{
+.ath-car-grd-item-catagory ul li.green span{
 	background: #0dc143;
 	padding: 12px 32px;
 }
 
 .ath-car-grd-item-img{
 	position: relative;
+}
+.img-overlay{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 0;
+	background: url('../images/opacity-gray.png');
+	opacity: 0;
+	z-index: -1;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
 }
 .ath-cgi-hover{
 	padding-left: 100px;
@@ -136,8 +149,6 @@
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-ms-transition: all 0.5s;
-	visibility: hidden;
-	opacity: 0;
 }
 .ath-cgi-hover-img{
 	position: absolute;
@@ -163,12 +174,11 @@
 }
 
 
-.ath-car-grd-item:hover .ath-car-grd-item-img > img{
-	opacity: 0.6;
-}
-.ath-car-grd-item:hover .ath-cgi-hover{
-	visibility: visible;
+
+.ath-car-grd-item-img:hover .img-overlay{
 	opacity: 1;
+	z-index: 1;
+	height: 100%;
 }
 
 
@@ -212,6 +222,7 @@
 	padding-bottom: 75px;
 }
 
+
 .ath-microcar-des-title{
 	display: block;
 	font-size: 37px;
@@ -245,13 +256,13 @@
 }
 
 @media(max-width: 991px){
-	.ath-car-grd-item-catagory ul li span.black{
+	.ath-car-grd-item-catagory ul li.black span{
 		padding: 12px 12px;
 	}
-	.ath-car-grd-item-catagory ul li span.navyblue {
+	.ath-car-grd-item-catagory ul li.navyblue span {
 	    padding: 12px 20px;
 	}
-	.ath-car-grd-item-catagory ul li span.green {
+	.ath-car-grd-item-catagory ul li.green span {
 	    padding: 12px 10px;
 	}
 	.ath-car-grd-item{
@@ -282,9 +293,6 @@
 	    padding-left: 0;
 	    padding-right: 0;
 	}
-	/*.ath-car-grd-item-des-title{
-		margin-right: -20px;
-	}*/
 	.ath-car-grd-item-img img{
 		width: 100%;
 	}
@@ -308,9 +316,20 @@
 	}
 	.ath-microcar-img{
 		text-align: center;
-	}
-	.ath-microcar-des{
 		padding-bottom: 30px;
+	}
+	.ath-coeh-title{
+		font-size: 34px;
+		margin-bottom: 20px;
+	}
+	.ath-car-offer-enty-hdr-inr p {
+	    margin-bottom: 25px;
+	}
+	.order-2{
+		order: 1;
+	}
+	.order-1{
+		order: 2;
 	}
 }
 
