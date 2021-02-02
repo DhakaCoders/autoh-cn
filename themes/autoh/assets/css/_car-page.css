@@ -164,8 +164,56 @@
 
 
 /*responsive*/
+@media(max-width: 991px){
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span{
+		font-size: 37px;
+	}
+}
 @media(max-width: 767px){
 	.breadcrumbs-sec{
 		display: none;
+	}
+	.thumbnails-cntlr {
+	    width: 30%;
+	}
+	.woocommerce-product-gallery {
+	    width: 70%;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
+	    font-size: 32px;
+	}
+}
+
+@media(max-width: 575px){
+	.car-ctlr .ath-coeh-title{
+		line-height: 1.2;
+	}
+	.thumbnails-cntlr {
+	    width: 35%;
+	}
+	.woocommerce-product-gallery {
+	    width: 65%;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
+	    font-size: 28px;
+	}
+}
+@media(max-width: 479px){
+	.car-ctlr .ath-car-grd-item-catagory ul li{
+		padding-bottom: 6px;
+	}
+	.thumbnails-cntlr {
+	    width: 38%;
+	}
+	.woocommerce-product-gallery {
+	    width: 62%;
+	}
+		.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
+	    font-size: 22px;
+	}
+}
+@media(max-width: 359px){
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
+	    font-size: 18px;
 	}
 }
