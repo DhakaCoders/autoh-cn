@@ -34,6 +34,7 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
 }
 
 .company-sec{
@@ -208,6 +209,10 @@
 	.banner-desc{
 		min-height: 130px;
 	}
+	.company-sec,
+	.workshop-sec{
+		padding: 50px 0 45px 0;
+	}
 }
 @media(max-width: 991px){
 	.banner-sec.has-banner{
@@ -215,6 +220,10 @@
 	}
 	.banner-desc{
 		min-height: 180px;
+	}
+	.company-sec,
+	.workshop-sec{
+		padding: 40px 0;
 	}
 }
 @media(max-width: 767px){
@@ -230,6 +239,10 @@
 	}
 	.banner-desc{
 		min-height: 220px;
+	}
+	.company-sec,
+	.workshop-sec{
+		padding: 30px 0;
 	}
 }
 @media(max-width: 639px){
