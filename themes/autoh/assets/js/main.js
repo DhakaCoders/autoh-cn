@@ -179,7 +179,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
   $('.xs-hdr-nav-humberger').on("click",function(){
-    $(this).next().slideToggle(300);
+    $(this).next().slideToggle(500);
     $(this).toggleClass('humberger-cross-wrap');
     
   });

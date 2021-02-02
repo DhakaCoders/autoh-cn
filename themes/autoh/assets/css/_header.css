@@ -314,9 +314,6 @@ nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
 		text-align: right;
 		padding-right: 20px;
 		display: none;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
-		-webkit-transition: all 0.5s;
 
 	}
 	nav.main-nav > ul{
@@ -386,10 +383,58 @@ nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
 	
 }
 @media(max-width: 575px){
-	
+	nav.main-nav > ul > li.menu-item-has-children .sub-menu > li > a{
+		font-size: 24px;
+	}
+	nav.main-nav > ul > li.menu-item-has-children .sub-menu > li{
+		padding-top: 4px;
+		padding-bottom: 4px;
+		padding-right: 20px;
+	}
+	nav.main-nav > ul > li.menu-item-has-children .sub-menu {
+		padding-top: 5px;
+		padding-bottom: 30px;
+	}
+	nav.main-nav > ul > li > a{
+		font-size: 32px;
+	}
+	nav.main-nav > ul > li {
+		padding: 6px 0;
+		margin: 0;
+	}
 }
 @media(max-width: 479px){
-	
+	.hdr-logo{
+		width: 118px;
+		top: 20px;
+	}
+	.xs-hdr-nav-humberger{
+		width: 43px;
+	}
+	.humberger-icon-title{
+		display: none;
+	}
+	.humberger-cross-wrap{
+		background: transparent;
+	}
+	.humberger-cross-wrap .humberger-icon{
+		display: block;
+	}
+	.humberger-cross-wrap .humberger-icon span:nth-child(1){
+		top: 5px;
+		transform: rotate(-45deg);
+	}
+	.humberger-cross-wrap .humberger-icon span:nth-child(2){
+		top: 5px;
+		transform: rotate(45deg);
+	}
+	.humberger-cross-wrap .humberger-icon span:nth-child(3){
+		display: none;
+		content: none;
+	}
+	.humberger-cross-wrap .humberger-cross-title{
+		display: none;
+	}
 }
 @media(max-width: 359px){
 	
