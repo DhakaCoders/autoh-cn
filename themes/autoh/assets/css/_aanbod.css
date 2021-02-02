@@ -39,6 +39,9 @@
 	color: #fff;
 	font-size: 22px;
 }
+.ath-car-offer-link ul li a:hover{
+	background: #dc1f2e;
+}
 
 @media(max-width: 1499px){
 
