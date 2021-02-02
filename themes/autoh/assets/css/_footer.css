@@ -110,7 +110,7 @@
 	font-size: 14px;
 	line-height: 1;
 	color: #000000;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .ftr-btn-menu ul li{
@@ -130,7 +130,7 @@
 	font-size: 14px;
 	line-height: 1;
 	color: #000000;
-	font-weight: 300;
+	font-weight: 400;
 }
 .ftr-btn-menu ul li a:hover{
 	color: #dc1f2e;
@@ -160,6 +160,22 @@
 	.ftr-top-lft{
 		width: 65%;
 	}
+	.ftr-logo {
+	    top: -60px;
+	    left: -92px;
+	}
+	.ftr-logo a {
+	    max-width: 180px;
+	}
+	.col-menu-1 {
+	    width: 27.8823%;
+	}
+	.col-menu-2 {
+	    width: 35.2352%;
+	}
+	.col-menu-3 {
+	    width: 35.8823%;
+	}
 
 }
 
@@ -169,7 +185,7 @@
 		padding-bottom: 20px;
 	}
 	.ftr-top-rgt{
-		width: 50%;
+		width: 87%;
 	}
 	.ftr-logo a{
 		max-width: 180px;
@@ -183,7 +199,7 @@
 
 @media(max-width: 767px){
 	.ftr-top-rgt {
-	    width: 60%;
+	    width: 85%;
 	    padding-left: 110px;
     	padding-bottom: 80px;
 	}
@@ -208,7 +224,7 @@
 
 @media(max-width: 575px){
 	.ftr-top-rgt {
-	    width: 70%;
+	    width: 83%;
 	    padding-left: 100px;
 	    padding-bottom: 40px;
 	}
@@ -227,16 +243,34 @@
 
 @media(max-width: 479px){
 	.ftr-top-rgt {
-	    width: 75%;
+	    width: 80%;
 	    padding-left: 90px;
 	    padding-bottom: 40px;
 	}
 	.ftr-top-rgt-menu ul li a{
-		font-size: 13px;
+		font-size: 18px;
+	}
+	.ftr-logo a {
+	    max-width: 130px;
+	}
+	.ftr-logo {
+	    top: -42px;
+	    left: -65px;
+	}
+	.ftr-top-rgt-menu ul li {
+	    padding-bottom: 20px;
 	}
 
 }
 
 @media(max-width: 359px){
-
+	.ftr-top-rgt {
+	    width: 77%;
+	    padding-left: 75px;
+	    padding-top: 12px;
+	    padding-bottom: 50px;
+	}
+	.ftr-top-rgt-menu ul li a {
+	    font-size: 16px;
+	}
 }

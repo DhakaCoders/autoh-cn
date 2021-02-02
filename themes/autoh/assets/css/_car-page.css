@@ -168,16 +168,36 @@
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span{
 		font-size: 37px;
 	}
+	.woocommerce-product-gallery{
+		width: 100%;
+	}
+	.thumbnails-cntlr{
+		width: 100%;
+		margin-top: 15px;
+	}
+	.car-product-gallery-inr .thumbnails{
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image{
+		width: 33.3333%;
+		float: left;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.car-product-gallery-inr{
+		max-width: 600px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.woocommerce-product-gallery__image a{
+		height: 450px;
+		background-size: 100% 100%!important;
+	}
 }
 @media(max-width: 767px){
 	.breadcrumbs-sec{
 		display: none;
-	}
-	.thumbnails-cntlr {
-	    width: 30%;
-	}
-	.woocommerce-product-gallery {
-	    width: 70%;
 	}
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
 	    font-size: 32px;
@@ -191,31 +211,55 @@
 	.car-ctlr .ath-coeh-title{
 		line-height: 1.2;
 	}
-	.thumbnails-cntlr {
-	    width: 35%;
-	}
-	.woocommerce-product-gallery {
-	    width: 65%;
-	}
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
 	    font-size: 28px;
 	}
 	.long-description-sec{
 		padding-top: 30px;
 	}
+	/*.woocommerce-product-gallery{
+		padding-right: 108px;
+		position: relative;
+	}
+	.thumbnails-cntlr{
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image{
+		max-width: 100px;
+		width: 100%;
+	}*/
+	.woocommerce-product-gallery {
+	    width: 65%;
+	}
+	.thumbnails-cntlr{
+		width: 35%;
+		margin-top: 0;
+		padding-left: 10px;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image{
+		width: 100%;
+	}
+	.woocommerce-product-gallery__image a{
+		height: 380px;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image a{
+		height: 120px;
+	}
 }
 @media(max-width: 479px){
 	.car-ctlr .ath-car-grd-item-catagory ul li{
 		padding-bottom: 6px;
 	}
-	.thumbnails-cntlr {
-	    width: 38%;
-	}
-	.woocommerce-product-gallery {
-	    width: 62%;
-	}
-		.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
 	    font-size: 22px;
+	}
+	.woocommerce-product-gallery__image a {
+	    height: 300px;
+	}
+	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image a {
+	    height: 93px;
 	}
 }
 @media(max-width: 359px){
