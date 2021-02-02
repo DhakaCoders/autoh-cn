@@ -9,6 +9,10 @@
 	margin-bottom: 20px;
 }
 
+.ath-car-offer-link{
+	display: flex;
+	align-items: center;
+}
 .ath-car-offer-link span{
 	display: inline-block;
 	vertical-align: baseline;
@@ -30,8 +34,87 @@
 .ath-car-offer-link ul li a{
 	display: inline-block;
 	vertical-align: baseline;
-	padding: 10px 20px;
+	padding: 10px 20px 7px;
 	background: #132f40;
 	color: #fff;
 	font-size: 22px;
+}
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.ath-car-offer-link ul {
+	    margin-left: -5px;
+	    margin-right: -5px;
+	}
+	.ath-car-offer-link ul li {
+	    padding-left: 5px;
+	    padding-right: 5px;
+	}
+	.ath-car-offer-link ul li a {
+	    padding: 10px 13px 7px;
+	    font-size: 20px;
+	}
+	
+}
+
+@media(max-width: 767px){
+	.ath-car-offer-link{
+		display: block;
+	}
+	.ath-car-offer-link span{
+		display: block;
+		margin-bottom: 15px;
+	}
+	.ath-car-offer-link ul {
+		display: block;
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	.ath-car-offer-link ul li {
+	    padding-left: 0px;
+	    padding-right: 0px;
+	}
+	.ath-car-offer-link ul li a {
+	    padding: 10px 11px 7px;
+	    font-size: 18px;
+	}
+	.aanbod-ctlr .ath-car-offer-enty-hdr {
+	    padding-bottom: 25px;
+	}
+}
+
+@media(max-width: 575px){
+	.ath-car-offer-link ul li{
+		display: block;
+		padding-bottom: 10px;
+	}
+	.aanbod-ctlr .ath-car-offer-enty-hdr {
+	    padding-bottom: 15px;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
