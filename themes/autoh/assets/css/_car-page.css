@@ -182,6 +182,9 @@
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
 	    font-size: 32px;
 	}
+	.long-description-sec{
+		padding-top: 40px;
+	}
 }
 
 @media(max-width: 575px){
@@ -196,6 +199,9 @@
 	}
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span {
 	    font-size: 28px;
+	}
+	.long-description-sec{
+		padding-top: 30px;
 	}
 }
 @media(max-width: 479px){

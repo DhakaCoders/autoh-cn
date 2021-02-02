@@ -29,7 +29,7 @@
 	font-weight: 400;
 	color: #fff;
 	text-transform: uppercase;
-	line-height: 1;
+	line-height: 0.7;
 	margin-bottom: 0;
 	position: absolute;
 	bottom: 0;
@@ -64,7 +64,7 @@
 	margin: 0;
 	line-height: 1;
 	color: #303037;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 24px;
 }
 .hm-contact-items{
@@ -132,6 +132,7 @@
 	display: block;
 	color: #ffffff;
 	font-size: 27px;
+	font-weight: 400;
 	margin-bottom: 0;
 	line-height: 1;
 }
@@ -189,6 +190,9 @@
 	.hm-contact-desc{
 		width: 100%;
 		margin-top: 15px;
+	}
+	.hm-contact-items{
+		margin-left: initial;
 	}
 	.hm-contact-items ul{
 		margin: 0 -5px;
@@ -260,7 +264,9 @@
 	}
 }
 @media(max-width: 479px){
-	
+	.banner-title{
+		font-size: 35px;
+	}
 }
 @media(max-width: 359px){
 	
