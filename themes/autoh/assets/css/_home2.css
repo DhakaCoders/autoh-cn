@@ -163,7 +163,7 @@
 }
 
 
-.ath-car-grd-item:hover .ath-car-grd-item-img img{
+.ath-car-grd-item:hover .ath-car-grd-item-img > img{
 	opacity: 0.6;
 }
 .ath-car-grd-item:hover .ath-cgi-hover{
