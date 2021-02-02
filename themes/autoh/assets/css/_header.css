@@ -24,18 +24,24 @@
 	align-items: center;
 	justify-content: flex-end;
 	flex-wrap: wrap;
-	margin: 0 -22px;
+	
 }
 .hdr-top-inr ul li{
 	padding: 0 22px;
 	line-height: 1;
+}
+.hdr-top-inr ul li:first-child{
+	padding-left: 0;
+}
+.hdr-top-inr ul li:last-child{
+	padding-right: 0;
 }
 .hdr-top-inr ul li a{
 	display: inline-block;
 	padding-left: 18px;
 	position: relative;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 400;
 	color: #133040;
 }
 .hdr-top-inr ul li.hdr-mail a{
@@ -74,6 +80,7 @@ nav.main-nav > ul > li{
 nav.main-nav > ul > li > a{
 	display: inline-block;
 	color: #1a171b;
+	font-weight: 500;
 	margin-left: 15px;
 	font-size: 17px;
 	margin-right: 15px;
