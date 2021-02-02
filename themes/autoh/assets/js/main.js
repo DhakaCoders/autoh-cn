@@ -177,6 +177,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
     $('.mega-menu-cntrl').css("padding-left", offsetlft)
   });
 
+
+  $('.xs-hdr-nav-humberger').on("click",function(){
+    $(this).next().slideToggle(300);
+    $(this).toggleClass('humberger-cross-wrap');
+    
+  });
+
 /*shariful*/
 
   var winWidth = $(window).width();
