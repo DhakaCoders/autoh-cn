@@ -257,7 +257,11 @@
 }
 
 @media(max-width: 1199px){
-	
+	.ath-car-offer-enty-hdr-inr,
+	.ath-car-grds-items{
+	    padding-left: 0;
+	    padding-right: 0;
+	}
 
 }
 
@@ -279,6 +283,11 @@
 	}
 	.ath-microcar-sec{
 		padding-bottom: 50px;
+	}
+	.ath-microcar-img{
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -323,6 +332,7 @@
 	.ath-microcar-img{
 		text-align: center;
 		padding-bottom: 30px;
+		display: block;
 	}
 	.ath-coeh-title{
 		font-size: 34px;
