@@ -87,6 +87,10 @@ nav.main-nav > ul > li > a{
 	position: relative;
 	padding-bottom: 15px;
 }
+
+nav.main-nav > ul > li.menu-item-has-children > ul{
+	display: none;
+}
 nav.main-nav > ul > li > a:hover,
 nav.main-nav > ul > li.current-menu-item > a{
 	color: #dc1f2e;

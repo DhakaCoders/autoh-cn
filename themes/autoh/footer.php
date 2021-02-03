@@ -56,13 +56,6 @@
                     );
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
-                <!-- ul class="reset-list">
-                  <li><a href="#">Apk Keuring</a></li>
-                  <li><a href="#">Onderhoud</a></li>
-                  <li><a href="#">Diagnose</a></li>
-                  <li><a href="#">Onderdelen</a></li>
-                  <li><a href="#">Banden</a></li>
-                </ul> -->
               </div>
               <div class="ftr-top-lft-menu col-menu-2">
                 <h5 class="ftr-menu-title">Bedrijfsinformatie</h5>
@@ -74,11 +67,6 @@
                     );
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
-                <!-- <ul class="reset-list">
-                  <li><a href="#">Over ons</a></li>
-                  <li><a href="#">Klantervaringen</a></li>
-                  <li><a href="#">Certificaten</a></li>
-                </ul> -->
               </div>
               <div class="ftr-top-lft-menu col-menu-3">
                 <h5 class="ftr-menu-title">Contact</h5>
@@ -90,11 +78,6 @@
                     );
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
-                <!-- <ul class="reset-list">
-                  <li><a href="#">Contact opnemen</a></li>
-                  <li><a href="#">Openingstijden</a></li>
-                  <li><a href="#">Contactgegevens</a></li>
-                </ul> -->
               </div>
             </div>
             

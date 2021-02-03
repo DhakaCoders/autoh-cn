@@ -11,8 +11,11 @@ $('.navbar-toggle').on('click', function(){
 
 
 
-//$("menu-item-has-children").append('<li><a href="#">New list item</a></li>');
+$(".menu-item-has-children").append('<div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu"> </div></div></div></div></div>');
 	
+  var subUl = $('.menu-item-has-children').find('.sub-menu').html();
+
+  $(".menu-item-has-children").find('.mega-menu').append(subUl);
   
 //matchHeightCol
 if($('.mHc').length){
