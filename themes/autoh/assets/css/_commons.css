@@ -189,7 +189,7 @@ u{
 strong{
 	font-weight: 700;
 }
-
+nav.main-nav > ul > li.menu-item-has-children ul,
 ul.reset-list,
 ol.reset-list,
 ul.sub-menu,
@@ -199,6 +199,7 @@ ul.sub-menu,
 	padding: 0;
 	list-style: none;
 }
+nav.main-nav > ul > li.menu-item-has-children ul li,
 .reset-list li,
 ul.sub-menu li,
 .fl-pagi-ctlr ul li,
@@ -208,6 +209,7 @@ ul.sub-menu li,
 	list-style: none;
 	margin: 0;
 }
+nav.main-nav > ul > li.menu-item-has-children ul li:before,
 .reset-list li:before,
 ul.sub-menu li:before,
 .fl-pagi-ctlr ul li:before,

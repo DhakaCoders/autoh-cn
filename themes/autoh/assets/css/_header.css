@@ -167,22 +167,22 @@ nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
 .mega-menu{
 
 }
-.mega-menu ul{
+nav.main-nav > ul > li.menu-item-has-children .mega-menu ul{
 	display: flex;
 	align-items: center;
 	margin: 0 -15px;
 }
-.mega-menu ul li{
+nav.main-nav > ul > li.menu-item-has-children .mega-menu ul li{
 	line-height: 1;
 	padding: 0 15px;
 	margin-bottom: 17px;
 }
-.mega-menu ul li a{
+nav.main-nav > ul > li.menu-item-has-children .mega-menu ul li a{
 	display: inline-block;
 	color: #fff;
 
 }
-.mega-menu ul li a:hover{
+nav.main-nav > ul > li.menu-item-has-children .mega-menu ul li a:hover{
 	color: #132f40;
 }
 
