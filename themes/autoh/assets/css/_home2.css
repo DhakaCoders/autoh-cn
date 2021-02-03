@@ -120,6 +120,12 @@
 .ath-car-grd-item-img{
 	position: relative;
 }
+.ath-car-grd-item-img-inr{
+	min-height: 265px;
+}
+.ath-car-grd-item-img-inr img{
+	display: none;
+}
 .img-overlay{
 	position: absolute;
 	left: 0;
@@ -331,6 +337,9 @@
 	.order-1{
 		order: 2;
 	}
+	.ath-microcar-des-title{
+		font-size: 34px;
+	}
 }
 
 @media(max-width: 575px){
@@ -350,6 +359,12 @@
 	}
 	.ath-microcar-sec{
 		padding-bottom: 0;
+	}
+	.ath-coeh-title {
+	    font-size: 32px;
+	}
+	.ath-microcar-des-title{
+		font-size: 32px;
 	}
 
 }
