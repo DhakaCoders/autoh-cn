@@ -180,6 +180,7 @@ nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
 .mega-menu ul li a{
 	display: inline-block;
 	color: #fff;
+
 }
 .mega-menu ul li a:hover{
 	color: #132f40;
@@ -340,6 +341,7 @@ nav.main-nav > ul > li.menu-item-has-children:hover .mega-menu-cntrl{
 		color: #fff;
 		margin: 0;
 		padding: 0;
+		font-weight: 400;
 		font-size: 37px;
 	}
 	nav.main-nav > ul > li > a:after{
