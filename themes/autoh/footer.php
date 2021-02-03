@@ -7,7 +7,10 @@
     $logo_tag = '';
   }
 
+
+
   $address = get_field('address', 'options');
+  $map_url = get_field('map_url', 'options');
 
   $spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';
   $show_telephone_2 = get_field('telephone_2', 'options');
@@ -37,7 +40,7 @@
               <div class="ftr-top-rgt-menu">
                 <ul class="reset-list">
                   <?php 
-                    if( !empty($address) ) printf('<li><a target="_blank" href="%s">%s</a></li>', $address, $address);
+                    if( !empty($address) ) printf('<li><a target="_blank" href="%s">%s</a></li>', $map_url, $address);
                     if( !empty($show_telephone_2) ) printf('<li><a href="tel:%s">%s</a></li>', $telephone_2, $show_telephone_2);
                    ?>
                 </ul>

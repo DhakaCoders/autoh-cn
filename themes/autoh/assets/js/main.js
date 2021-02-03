@@ -9,13 +9,14 @@ $('.navbar-toggle').on('click', function(){
 });
 
 
+$( "li.menu-item-has-children" ).each(function( index ) {
+  $(this).append('<div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu"><ul> </ul></div></div></div></div></div>');
+  var subUl = $(this).find('.sub-menu').html();
+  $(this).find('.mega-menu ul').append(subUl);
+  
+});
 
 
-$(".menu-item-has-children").append('<div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu"> </div></div></div></div></div>');
-	
-  var subUl = $('.menu-item-has-children').find('.sub-menu').html();
-
-  $(".menu-item-has-children").find('.mega-menu').append(subUl);
   
 //matchHeightCol
 if($('.mHc').length){
