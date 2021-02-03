@@ -162,6 +162,9 @@
 	text-align: left;
 	display: block;
 }
+.breadcrumbs-cntlr{
+	padding-left: 0;
+}
 
 
 /*responsive*/
