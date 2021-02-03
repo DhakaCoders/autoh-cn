@@ -26,9 +26,21 @@
 
 
 <?php 
-    $logo_header = get_field('logo_header', 'options');  
-    $email = get_field('email', 'options');  
-    $telephone_1 = get_field('telephone_1', 'options');
+
+  $logoObj = get_field('hdlogo', 'options');
+  if( is_array($logoObj) ){
+    $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+  }else{
+    $logo_tag = '';
+  }
+
+  $email = get_field('email', 'options'); 
+
+  $spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';
+  $show_telephone_1 = get_field('telephone_1', 'options');
+  $telephone_1  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_1 ));
+
+
 
 ?>
 
@@ -38,27 +50,30 @@
       <div class="row">
         <div class="col-md-12">
           <div class="hdr-top-inr">
-            
-            <?php if( !empty( $logo_header ) ) :?>
+
+            <?php if( !empty( $logo_tag ) ) :?>
             <div class="hdr-logo">
               <a href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo $logo_header; ?>">
+                <?php echo $logo_tag; ?>
               </a>
             </div>
             <?php endif; ?>
 
             <ul class="reset-list">
+              <?php if( !empty($email) ): ?>
               <li>
-                <a href="mailto:info@autobedrijf-hazenberg.nl">
-                  <span> info@autobedrijf-hazenberg.nl</span>
+                <a href="mailto:<?php echo $email; ?>">
+                  <span> <?php echo $email; ?></span>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/mail-icon.png" alt=""></i>
                 </a>
               </li>
-              <li class="hdr-mail"><a href="tel:0592541212">
-                <span>  0592 - 541 212</span>
+              <?php endif; if( !empty($show_telephone_1 ) ): ?>
+              <li class="hdr-tel"><a href="tel:<?php echo $telephone_1; ?>">
+                <span><?php echo $show_telephone_1; ?></span>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/tell-icon.png" alt=""></i>
                 </a>
               </li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>
@@ -71,7 +86,16 @@
         <div class="col-md-12">
           <div class="hdr-btm-inr">
             <nav class="main-nav">
-              <ul class="clearfix reset-list">
+              <?php 
+                  $mmenuOptions = array( 
+                      'theme_location' => 'cbv_main_menu', 
+                      'menu_class' => 'clearfix reset-list',
+                      'container' => 'mnav',
+                      'container_class' => 'mnav'
+                    );
+                  wp_nav_menu( $mmenuOptions ); 
+                ?>
+              <!-- <ul class="clearfix reset-list">
                 <li class="current-menu-item"><a href="#">home</a></li>
                 <li class="menu-item-has-children">
                   <a href="#">werkplaats</a>
@@ -113,7 +137,7 @@
                 <li><a href="#">over ons</a></li>
                 <li><a href="#">carrière</a></li>
                 <li><a href="#">contact</a></li>
-              </ul>
+              </ul> -->
             </nav>
           </div>
         </div>
@@ -125,12 +149,15 @@
       <div class="row">
         <div class="col-md-12">
           <div class="xs-header-menu">
+            <?php if( !empty($show_telephone_1) ): ?>
             <div class="xs-hdr-menu-tell xs-hdr-menu-contact">
-              <a href="#"><i><img src="<?php echo THEME_URI; ?>/assets/images/xs-hdr-tell-icon.png" alt=""></i></a>
+              <a href="tel:<?php echo $telephone_1; ?>"><i><img src="<?php echo THEME_URI; ?>/assets/images/xs-hdr-tell-icon.png" alt=""></i></a>
             </div>
+            <?php endif; if( !empty($email) ): ?>
             <div class="xs-hdr-menu-email xs-hdr-menu-contact">
-              <a href="#"><i><img src="<?php echo THEME_URI; ?>/assets/images/xs-hdr-mail-icon.png" alt=""></i></a>
+              <a href="mailto:<?php echo $email; ?>"><i><img src="<?php echo THEME_URI; ?>/assets/images/xs-hdr-mail-icon.png" alt=""></i></a>
             </div>
+            <?php endif; ?>
             <div class="xs-hdr-nav">
               <div class="xs-hdr-nav-humberger">
                 <div class="humberger-icon">
@@ -142,7 +169,16 @@
                 <strong class="humberger-cross-title">MENU SLUITEN</strong>
               </div>
               <nav class="main-nav">
-                <ul class="clearfix reset-list">
+                <?php 
+                  $mmenuOptions = array( 
+                      'theme_location' => 'cbv_main_menu', 
+                      'menu_class' => 'clearfix reset-list',
+                      'container' => 'mnav',
+                      'container_class' => 'mnav'
+                    );
+                  wp_nav_menu( $mmenuOptions ); 
+                ?>
+                <!-- <ul class="clearfix reset-list">
                   <li class="current-menu-item"><a href="#">home</a></li>
                   <li class="menu-item-has-children">
                     <a href="#">werkplaats</a>
@@ -164,7 +200,7 @@
                   <li><a href="#">over ons</a></li>
                   <li><a href="#">carrière</a></li>
                   <li><a href="#">contact</a></li>
-                </ul>
+                </ul> -->
               </nav>
             </div>
           </div>
