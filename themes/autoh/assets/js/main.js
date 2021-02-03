@@ -7,6 +7,11 @@ var windowWidth = $(window).width();
 $('.navbar-toggle').on('click', function(){
 	$('#mobile-nav').slideToggle(300);
 });
+
+
+
+
+//$("menu-item-has-children").append('<li><a href="#">New list item</a></li>');
 	
   
 //matchHeightCol

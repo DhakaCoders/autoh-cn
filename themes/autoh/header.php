@@ -118,11 +118,7 @@
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">auto aanbod</a>
-                  <div class="mega-menu-cntrl">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="mega-menu">
+                  <div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu">
                             <ul class="reset-list mega-menu-items">
                               <li><a href="#">personenautos</a></li>
                               <li><a href="#">bedrijfswagens</a></li>
