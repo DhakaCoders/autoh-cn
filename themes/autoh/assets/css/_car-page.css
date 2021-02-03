@@ -58,7 +58,8 @@
     background: url('../images/breadcum-icon.png');
 }
 .breadcrumbs-cntlr ul li a,
-.breadcrumbs-cntlr ul li:last-child span{
+.breadcrumbs-cntlr ul li:last-child span,
+.breadcrumbs-cntlr ul li.active span{
 	display: inline-block;
 	color: #454545;
 	font-size: 13px;
