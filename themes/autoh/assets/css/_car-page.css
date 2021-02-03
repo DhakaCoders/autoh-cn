@@ -182,12 +182,15 @@
 .car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span:hover{
 	color: #dc1f2e;
 }
-.breadcrumbs-cntlr{
-	padding-left: 0;
-}
+
 
 
 /*responsive*/
+@media(max-width: 1199px){
+	.breadcrumbs-cntlr{
+		padding-left: 0;
+	}
+}
 @media(max-width: 991px){
 	.car-product-gallery-inr .thumbnails .woocommerce-product-gallery__image:last-child span{
 		font-size: 37px;
