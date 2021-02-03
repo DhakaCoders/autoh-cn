@@ -186,16 +186,28 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*shariful*/
 
-  var winWidth = $(window).width();
-  var container = $('.container').width();
-  var containerSide = winWidth - container;
-  var rgtcont = containerSide / 2;
+  if(windowWidth >= 767){
+    if($('.ftr-top-rgt-gray-bg').length){
+      var winWidth = $(window).width();
+      var container = $('.container').width();
+      var containerSide = winWidth - container;
+      var rgtcont = containerSide / 2;
 
-  $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
+      $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
 
-  $(window).resize(function(){
-    $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
-  });
+
+      $(window).resize(function(){
+        var winWidth = $(window).width();
+        var container = $('.container').width();
+        var containerSide = winWidth - container;
+        var rgtcont = containerSide / 2;
+
+        $('.ftr-top-rgt-gray-bg').css('width', rgtcont);
+      });
+    };
+  }
+  
+
 
 
 })(jQuery);
