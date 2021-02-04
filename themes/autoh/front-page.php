@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+  get_header(); 
+  $thisID = get_the_ID();
+?>
 
 <section class="banner-sec has-banner">
   <div class="banner-bg inline-bg clearfix" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/banner.jpg');"></div> 
@@ -18,15 +21,22 @@
     <div class="row">
       <div class="col-md-12">
         <div class="company-sec-inr">
-          <h2 class="company-title fl-h2">Jouw autobedrijf zit in Vries</h2>
-          <p>Autobedrijf Hazenberg BV heeft alles in huis op het gebied van mobiliteit. Wij kunnen u een zeer breed pakket van diensten aanbieden. Al meer dan 40 jaar zijn wij gevestigd in Vries. Wij zijn een universeel BOVAG autobedrijf, dat alle voorkomende werkzaamheden uitvoert. Laat u zich adviseren door <a href="#">onze experts</a>.</p>
-          <p>Voor o.a. onderhoud, APK, schade en airco service, zowel aan personenauto’s als aan bedrijfswagens, bent u bij ons aan het juiste adres. Onze monteurs zijn goed opgeleid, ervaren en zeer gemotiveerd en onderhouden alle merken. Onze deskundige vakspecialisten en onze uitgebreide technische apparatuur zijn altijd up-to-date. Wij hebben 3 auto-elektronica specialisten aan het werk. Tezamen met onze diagnosetesters is geen probleem te moeilijk. Een uitgebreide database met technische informatie bezitten we uiteraard ook.</p>
+          <?php  the_content(); ?>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+
+<?php 
+  $email = get_field('email', 'options'); 
+  $show_telephone_1 = get_field('telephone_1', 'options');
+  $telephone_1  = phone_preg($show_telephone_1);
+  $whatsapp = get_field('whatsapp', 'options'); 
+
+?>
 <section class="hm-contact-sec">
   <div class="container">
     <div class="row">
@@ -37,33 +47,34 @@
           </div>
           <div class="hm-contact-items">
             <ul class="reset-list">
+              <?php if( !empty($show_telephone_1 ) ): ?>
               <li>
                 <div class="hm-contact-item bg-blue">
-                  <a class="overlay-link" href="#"></a>
+                  <a class="overlay-link" href="tel:<?php echo $telephone_1; ?>"></a>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/cn-mbl-icon.png" alt=""></i>
-                  <strong class="hm-contact-item-sub-title">0592-541212</strong>
-                  <h3 class="hm-contact-item-title">Bel ons</h3>
+                  <strong class="hm-contact-item-sub-title"><?php echo $show_telephone_1; ?></strong>
+                  <h3 class="hm-contact-item-title"><?php _e( 'Bel ons', THEME_NAME ); ?></h3>
                 </div>
               </li>
-
+              <?php endif; if( !empty($email) ): ?>
                <li>
                 <div class="hm-contact-item bg-sky">
-                  <a class="overlay-link" href="#"></a>
+                  <a class="overlay-link" href="mailto:<?php echo $email; ?>"></a>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/cn-email-icon.png" alt=""></i>
-                  <strong class="hm-contact-item-sub-title">verstuur een</strong>
-                  <h3 class="hm-contact-item-title">E-mail</h3>
+                  <strong class="hm-contact-item-sub-title"><?php _e( 'verstuur een', THEME_NAME ); ?></strong>
+                  <h3 class="hm-contact-item-title"><?php _e( 'E-mail', THEME_NAME ); ?></h3>
                 </div>
               </li>
-
+              <?php endif; if( !empty($whatsapp) ): ?>
                <li>
                 <div class="hm-contact-item bg-green hm-contact-whapp-item">
-                  <a class="overlay-link" href="#"></a>
+                  <a class="overlay-link" href="tel:<?php echo $whatsapp; ?>"></a>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/cn-whatapps-icon.png" alt=""></i>
-                  <strong class="hm-contact-item-sub-title">stuur ons een</strong>
-                  <h3 class="hm-contact-item-title">Whatsapp</h3>
+                  <strong class="hm-contact-item-sub-title"><?php _e( 'stuur ons een', THEME_NAME ); ?></strong>
+                  <h3 class="hm-contact-item-title"><?php _e( 'Whatsapp', THEME_NAME ); ?></h3>
                 </div>
               </li>
-
+              <?php endif;?>
             </ul>
           </div>
         </div>
@@ -72,14 +83,22 @@
   </div>
 </section>
 
+
+<?php 
+  $ws_title = get_field('ws_title', $thisID);
+  $ws_description = get_field('ws_description', $thisID);
+?>
+
 <section class="workshop-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="Workshop-cntlr">
           <div class="workshop-desc">
-            <h2 class="Workshop-title fl-h2">Workshop</h2>
-            <p>Voor elke auto geeft de fabrikant een onderhoudsschema op. Denk aan tijdig verversen van de motorolie, vervangen van olie-, lucht-, interieur- en brandstoffilter of het vervangen van de distributieriem. Dit schema werkt de eerste jaren prima, maar naar verloop van tijd blijkt toch dat we dit schema voor elke klant en auto moeten aanpassen. Aangepast preventief onderhoud is noodzakelijk om u voordelig en veilig te laten rijden.</p>
+            <?php 
+              if( !empty($ws_title) ) printf('<h2 class="Workshop-title fl-h2">%s</h2>', $ws_title);
+              if( !empty($ws_description)) echo wpautop($ws_description); 
+            ?>
           </div>
           <div class="Workshop-tags">
             <ul class="reset-list">
@@ -109,6 +128,12 @@
   </div>
 </section>
 
+
+
+<?php 
+  $co_title = get_field('co_title', $thisID);
+  $co_description = get_field('co_description', $thisID);
+?>
 <section class="ath-car-offer">
   <div class="ath-car-offer-enty-hdr">
     <div class="container-fluid">
@@ -116,8 +141,10 @@
         <div class="col-md-12">
           <div class="ath-car-offer-enty-hdr-ctlr">
             <div class="ath-car-offer-enty-hdr-inr">
-              <h2 class="ath-coeh-title fl-h2">Actueel auto aanbod</h2>
-              <p>Onderstaand vindt u de laatst toegevoegde items van ons aanbod. Koop je een auto bij Autobedrijf Hazenberg dan ben je altijd verzekerd van 2 jaar garantie, pech-hulp en een onderhoudsbeurt.</p>
+              <?php 
+                if( !empty($co_title) ) printf('<h2 class="ath-coeh-title fl-h2">%s</h2>', $co_title);
+                if( !empty($co_description)) echo wpautop($co_description); 
+              ?>
             </div>
           </div>
         </div>
@@ -304,19 +331,29 @@
 </section>
 
 
+<?php 
+  $mc_title = get_field('mc_title', $thisID);
+  $mc_description = get_field('mc_description', $thisID);
+  $mc_image = get_field('mc_image', $thisID);
+?>
+
 <section class="ath-microcar-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-6 order-2">
+        <?php if($mc_image): ?>
         <div class="ath-microcar-img">
-          <img src="<?php echo THEME_URI; ?>/assets/images/ath-microcar-img-01.png">
+          <!-- <img src="<?php echo THEME_URI; ?>/assets/images/ath-microcar-img-01.png"> -->
+          <?php echo cbv_get_image_tag($mc_image, ''); ?>
         </div>
+        <?php endif; ?>
       </div>
       <div class="col-md-6 order-1">
         <div class="ath-microcar-des">
-          <h2 class="ath-microcar-des-title">Brommobielen</h2>
-          <p>Sinds 2013 zijn wij ook Ligier en Microcar dealer. Deze prachtige modellen zijn van alle gemakken voorzien, gelijk een personenwagen. Elektrische ramen, centrale vergrendeling, navigatie, standzaard automaat en een sterke, maar erg stille CDI diesel zijn zomaar een paar mogelijkheden.</p>
-          <P>in onze vestiging Asserstraat 1 hebben wij altijd een paar modellen op voorraad. Kom langs en verbaas u. Kunt u niet zelfstandig langs komen, geef dan even een belletje en wij zoeken voor een passende oplossing.</P>
+          <?php 
+            if( !empty($mc_title) ) printf('<h2 class="ath-microcar-des-title">%s</h2>', $mc_title);
+            if( !empty($mc_description)) echo wpautop($mc_description); 
+          ?>
         </div>
       </div>
     </div>
