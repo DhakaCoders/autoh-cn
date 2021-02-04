@@ -28,10 +28,7 @@
   }
 
   $email = get_field('email', 'options'); 
-
-  /*$spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';*/
   $show_telephone_1 = get_field('telephone_1', 'options');
- /* $telephone_1  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_1 ));*/
   $telephone_1  = phone_preg($show_telephone_1);
 ?>
 
