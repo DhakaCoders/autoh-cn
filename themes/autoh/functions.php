@@ -169,6 +169,16 @@ add_action( 'pre_get_posts', 'get_all_referenties_posts' );
 
 
 
+/* phone clean text*/
+
+function phone_preg( $show_telefoon ){
+  $replaceArray = '';
+  $spacialArry = array(".", "/", "+", " ");
+  $show_telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+  return $show_telefoon;
+}
+
+
 
 /**
 ACF - Custom rule for WOO attribues
@@ -213,6 +223,8 @@ if( !function_exists('cbv_custom_both_breadcrump')){
             }
     }
 }
+
+
 
 
 /**

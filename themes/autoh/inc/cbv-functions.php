@@ -158,3 +158,12 @@ function hex_to_rgb( $hex ){
     return false;
   }
 }
+
+
+
+function phone_preg( $show_telefoon ){
+  $replaceArray = '';
+  $spacialArry = array(".", "/", "+", " ");
+  $show_telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+  return $show_telefoon;
+}

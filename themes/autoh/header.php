@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
-  <meta charset="utf-8">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
   <?php $favicon = get_theme_mod('favicon'); if(!empty($favicon)) { ?> 
   <link rel="shortcut icon" href="<?php echo $favicon; ?>" />
   <?php } ?>
 
+  <?php $favicon = get_theme_mod('favicon'); if(!empty($favicon)) { ?> 
+  <link rel="shortcut icon" href="<?php echo $favicon; ?>" />
+  <?php } ?>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
-
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -21,11 +19,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-
-
 <?php 
-
   $logoObj = get_field('hdlogo', 'options');
   if( is_array($logoObj) ){
     $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
@@ -35,12 +29,10 @@
 
   $email = get_field('email', 'options'); 
 
-  $spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';
+  /*$spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';*/
   $show_telephone_1 = get_field('telephone_1', 'options');
-  $telephone_1  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_1 ));
-
-
-
+ /* $telephone_1  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_1 ));*/
+  $telephone_1  = phone_preg($show_telephone_1);
 ?>
 
 <header class="header">
@@ -94,45 +86,6 @@
                     );
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
-              <!-- <ul class="clearfix reset-list">
-                <li class="current-menu-item"><a href="#">home</a></li>
-                <li class="menu-item-has-children">
-                  <a href="#">werkplaats</a>
-                  <div class="mega-menu-cntrl">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="mega-menu">
-                            <ul class="reset-list mega-menu-items">
-                              <li><a href="#">onderhoud</a></li>
-                              <li><a href="#">apk</a></li>
-                              <li><a href="#">reparaties</a></li>
-                              <li><a href="#">bandenwissel</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="menu-item-has-children">
-                  <a href="#">auto aanbod</a>
-                  <div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu">
-                            <ul class="reset-list mega-menu-items">
-                              <li><a href="#">personenautos</a></li>
-                              <li><a href="#">bedrijfswagens</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li><a href="#">brommobielen</a></li>
-                <li><a href="#">over ons</a></li>
-                <li><a href="#">carrière</a></li>
-                <li><a href="#">contact</a></li>
-              </ul> -->
             </nav>
           </div>
         </div>
@@ -173,29 +126,6 @@
                     );
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
-                <!-- <ul class="clearfix reset-list">
-                  <li class="current-menu-item"><a href="#">home</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">werkplaats</a>
-                    <ul class="reset-list sub-menu">
-                      <li><a href="#">onderhoud</a></li>
-                      <li><a href="#">apk</a></li>
-                      <li><a href="#">reparaties</a></li>
-                      <li><a href="#">bandenwissel</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item-has-children">
-                    <a href="#">auto aanbod</a>
-                    <ul class="reset-list sub-menu">
-                      <li><a href="#">personenautos</a></li>
-                      <li><a href="#">bedrijfswagens</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">brommobielen</a></li>
-                  <li><a href="#">over ons</a></li>
-                  <li><a href="#">carrière</a></li>
-                  <li><a href="#">contact</a></li>
-                </ul> -->
               </nav>
             </div>
           </div>
