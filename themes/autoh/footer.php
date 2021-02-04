@@ -11,10 +11,12 @@
 
   $address = get_field('address', 'options');
   $map_url = get_field('map_url', 'options');
+  $gmaplink = !empty($map_url)?$map_url: 'javascript:void()';
 
   $spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';
   $show_telephone_2 = get_field('telephone_2', 'options');
-  $telephone_2  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_2 ));
+  /*$telephone_2  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_2 ));*/
+  $telephone_2  = phone_preg($show_telephone_2);
 
   $copyright_text = get_field('copyright_text', 'options');
 
@@ -40,7 +42,7 @@
               <div class="ftr-top-rgt-menu">
                 <ul class="reset-list">
                   <?php 
-                    if( !empty($address) ) printf('<li><a target="_blank" href="%s">%s</a></li>', $map_url, $address);
+                    if( !empty($address) ) printf('<li><a href="%s">%s</a></li>', $gmaplink, $address);
                     if( !empty($show_telephone_2) ) printf('<li><a href="tel:%s">%s</a></li>', $telephone_2, $show_telephone_2);
                    ?>
                 </ul>
@@ -49,7 +51,7 @@
             </div>
             <div class="ftr-top-lft clearfix">
               <div class="ftr-top-lft-menu col-menu-1">
-                <h5 class="ftr-menu-title">Werkplaats</h5>
+                <h5 class="ftr-menu-title"><?php _e( 'Werkplaats', THEME_NAME ); ?></h5>
 
                 <?php 
                   $mmenuOptions = array( 
@@ -61,7 +63,7 @@
                 ?>
               </div>
               <div class="ftr-top-lft-menu col-menu-2">
-                <h5 class="ftr-menu-title">Bedrijfsinformatie</h5>
+                <h5 class="ftr-menu-title"><?php _e( 'Bedrijfsinformatie', THEME_NAME ); ?></h5>
                 <?php 
                   $mmenuOptions = array( 
                       'theme_location' => 'cbv_footer_menu_2', 
@@ -72,7 +74,7 @@
                 ?>
               </div>
               <div class="ftr-top-lft-menu col-menu-3">
-                <h5 class="ftr-menu-title">Contact</h5>
+                <h5 class="ftr-menu-title"><?php _e( 'Contact', THEME_NAME ); ?></h5>
                 <?php 
                   $mmenuOptions = array( 
                       'theme_location' => 'cbv_footer_menu_3', 
@@ -104,10 +106,7 @@
                   wp_nav_menu( $mmenuOptions ); 
                 ?>
             </div>
-
             <?php if( !empty($copyright_text) ) printf('<div class="ftr-copywrite"><p>%s</p></div>', $copyright_text); ?>
-
-            
           </div>
         </div>
       </div>
