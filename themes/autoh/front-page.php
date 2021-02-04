@@ -27,15 +27,11 @@
     </div>
   </div>
 </section>
-
-
-
 <?php 
   $email = get_field('email', 'options'); 
   $show_telephone_1 = get_field('telephone_1', 'options');
   $telephone_1  = phone_preg($show_telephone_1);
   $whatsapp = get_field('whatsapp', 'options'); 
-
 ?>
 <section class="hm-contact-sec">
   <div class="container">
@@ -56,7 +52,8 @@
                   <h3 class="hm-contact-item-title"><?php _e( 'Bel ons', THEME_NAME ); ?></h3>
                 </div>
               </li>
-              <?php endif; if( !empty($email) ): ?>
+              <?php endif; ?>
+              <?php if( !empty($email) ): ?>
                <li>
                 <div class="hm-contact-item bg-sky">
                   <a class="overlay-link" href="mailto:<?php echo $email; ?>"></a>
@@ -65,10 +62,11 @@
                   <h3 class="hm-contact-item-title"><?php _e( 'E-mail', THEME_NAME ); ?></h3>
                 </div>
               </li>
-              <?php endif; if( !empty($whatsapp) ): ?>
+              <?php endif; ?>
+              <?php if( !empty($whatsapp) ): ?>
                <li>
                 <div class="hm-contact-item bg-green hm-contact-whapp-item">
-                  <a class="overlay-link" href="tel:<?php echo $whatsapp; ?>"></a>
+                  <a class="overlay-link" href="<?php echo $whatsapp; ?>"></a>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/cn-whatapps-icon.png" alt=""></i>
                   <strong class="hm-contact-item-sub-title"><?php _e( 'stuur ons een', THEME_NAME ); ?></strong>
                   <h3 class="hm-contact-item-title"><?php _e( 'Whatsapp', THEME_NAME ); ?></h3>
@@ -82,13 +80,10 @@
     </div>
   </div>
 </section>
-
-
 <?php 
   $ws_title = get_field('ws_title', $thisID);
   $ws_description = get_field('ws_description', $thisID);
 ?>
-
 <section class="workshop-sec">
   <div class="container">
     <div class="row">
@@ -329,14 +324,11 @@
     </div>
   </div>
 </section>
-
-
 <?php 
   $mc_title = get_field('mc_title', $thisID);
   $mc_description = get_field('mc_description', $thisID);
   $mc_image = get_field('mc_image', $thisID);
 ?>
-
 <section class="ath-microcar-sec">
   <div class="container">
     <div class="row">
@@ -358,7 +350,4 @@
     </div>
   </div>
 </section>
-
-
-
 <?php get_footer(); ?>
