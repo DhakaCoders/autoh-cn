@@ -343,7 +343,6 @@
       <div class="col-md-6 order-2">
         <?php if($mc_image): ?>
         <div class="ath-microcar-img">
-          <!-- <img src="<?php echo THEME_URI; ?>/assets/images/ath-microcar-img-01.png"> -->
           <?php echo cbv_get_image_tag($mc_image, ''); ?>
         </div>
         <?php endif; ?>
