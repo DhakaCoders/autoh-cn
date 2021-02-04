@@ -163,7 +163,7 @@ function hex_to_rgb( $hex ){
 
 function phone_preg( $show_telefoon ){
   $replaceArray = '';
-  $spacialArry = array(".", "/", "+", " ");
+  $spacialArry = array(".", "/", "+", " ", "-");
   $show_telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
   return $show_telefoon;
 }
