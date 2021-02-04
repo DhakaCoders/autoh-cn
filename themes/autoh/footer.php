@@ -8,12 +8,8 @@
   $address = get_field('address', 'options');
   $map_url = get_field('map_url', 'options');
   $gmaplink = !empty($map_url)?$map_url: 'javascript:void()';
-
-  $spacialArry = array(".", "/", "+", "-", " ");$replaceArray = '';
   $show_telephone_2 = get_field('telephone_2', 'options');
-  /*$telephone_2  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_2 ));*/
   $telephone_2  = phone_preg($show_telephone_2);
-
   $copyright_text = get_field('copyright_text', 'options');
 ?>
 
