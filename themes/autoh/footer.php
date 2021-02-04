@@ -1,14 +1,10 @@
 <?php 
-
   $logoObj = get_field('ftlogo', 'options');
   if( is_array($logoObj) ){
     $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
   }else{
     $logo_tag = '';
   }
-
-
-
   $address = get_field('address', 'options');
   $map_url = get_field('map_url', 'options');
 
@@ -17,8 +13,6 @@
   $telephone_2  = trim(str_replace($spacialArry, $replaceArray, $show_telephone_2 ));
 
   $copyright_text = get_field('copyright_text', 'options');
-
-
 ?>
 
 <footer class="footer-wrp">
@@ -106,8 +100,6 @@
             </div>
 
             <?php if( !empty($copyright_text) ) printf('<div class="ftr-copywrite"><p>%s</p></div>', $copyright_text); ?>
-
-            
           </div>
         </div>
       </div>
