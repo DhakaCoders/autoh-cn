@@ -167,6 +167,7 @@ function get_all_referenties_posts( $query ) {
     }
 add_action( 'pre_get_posts', 'get_all_referenties_posts' );
 
+
 /**
 ACF - Custom rule for WOO attribues
 */
