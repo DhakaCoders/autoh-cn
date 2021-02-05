@@ -112,7 +112,7 @@ $thisID = get_the_ID();
                               $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
                            ?>
                           <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo $post_thumbnail[0]; ?>');">
-                              <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
+                              <img src="<?php echo $post_thumbnail[0]; ?>">
                           </div>
                           <?php endif; ?>
 
