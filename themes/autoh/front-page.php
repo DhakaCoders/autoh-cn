@@ -147,8 +147,44 @@
     </div>
   </div>
   <?php endif; ?>
+  <?php 
+    $offersIDS = $coffer['select_offer'];
+    if( !empty($offersIDS) ){
+      $count = count($offersIDS);
+      $offerIDS = ( $count > 1 )? $offersIDS: $offersIDS;
+      $offerQuery = new WP_Query(array(
+        'post_type' => 'car_offers',
+        'posts_per_page'=> $count,
+        'post__in' => $offerIDS,
+        'orderby' => 'date',
+        'order'=> 'asc',
+
+      ));
+          
+    }else{
+      $offerQuery = new WP_Query(array(
+        'post_type' => 'car_offers',
+        'posts_per_page'=> 3,
+        'orderby' => 'date',
+        'order'=> 'desc',
+
+      ));
+    }
+    
+
+    if( $offerQuery->have_posts() ):
+      $countQuery = new WP_Query(array('post_type' => 'car_offers'));
+      $carofferCount = $countQuery->found_posts;
+  ?>
   <div class="ath-car-grds">
     <ul class="reset-list">
+      <?php 
+        while ( $offerQuery->have_posts() ) : $offerQuery->the_post();
+        $specs = get_field('car_specific', get_the_ID());  
+        $imgID = get_post_thumbnail_id(get_the_ID());
+        $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): '';
+        $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): '';
+      ?>
       <li>
         <div class="container-fluid">
           <div class="row">
@@ -157,17 +193,17 @@
                 <div class="ath-car-grds-items">
                   <div class="ath-car-grd-item">
                     <div class="ath-car-grd-item-img-ctlr">
-                      <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
+                      <h4 class="ath-car-grd-item-des-title show-sm"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                       <div class="ath-car-grd-item-img">
-                        <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg">
+                        <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo $imgsrc; ?>');">
+                            <?php echo $imgtag; ?>
                         </div>
                         
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
-                            <li class="black"><span>DIESEL</span></li>
-                            <li class="green"><span>€ 10.099,-</span></li>
+                            <?php if( !empty($specs['co_fuel']) ) printf('<li class="black"><span>%s</span></li>', $specs['co_fuel']); ?>
+                            <?php if( !empty($specs['co_price']) ) printf('<li class="green"><span>%s ,-</span></li>', $specs['co_price']); ?>
                           </ul>
                         </div>
                         <div class="img-overlay">
@@ -176,7 +212,7 @@
                               <img src="<?php echo THEME_URI; ?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
-                              <a href="#">Alle details bekijken ></a>
+                              <a href="<?php the_permalink(); ?>">Alle details bekijken ></a>
                             </div>
                           </div>
                         </div>
@@ -184,15 +220,14 @@
                       </div>
                     </div>
                     <div class="ath-car-grd-item-des hide-sm">
-                      <h4 class="ath-car-grd-item-des-title"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
-                      <p>Nette Caddy afkomstig uit de lease. Zeer netjes van binnen en buiten.</p>
-                      <p>Auto is voorzien van diverse optie’s waaronder airco, xenon, electrische ramen, vergr. op afstandsbediening, sortimo opbergsysteem en trekhaak.</p>
+                      <h4 class="ath-car-grd-item-des-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                      <?php the_excerpt(); ?>
                       <div class="ath-car-grd-item-catagory">
                         <ul class="reset-list">
-                          <li><span>2012</span></li>
-                          <li class="black"><span>DIESEL</span></li>
-                          <li class="navyblue"><span>139.000 KM </span></li>
-                          <li class="green"><span>€ 10.099,-</span></li>
+                          <?php if( !empty($specs['co_year']) ) printf('<li><span>%s</span></li>', $specs['co_year']); ?>
+                          <?php if( !empty($specs['co_fuel']) ) printf('<li class="black"><span>%s</span></li>', $specs['co_fuel']); ?>
+                          <?php if( !empty($specs['co_km']) ) printf('<li class="navyblue"><span>%s KM</span></li>', $specs['co_km']); ?>
+                          <?php if( !empty($specs['co_price']) ) printf('<li class="green"><span>%s ,-</span></li>', $specs['co_price']); ?>
                         </ul>
                       </div>
                     </div>
@@ -204,111 +239,7 @@
         </div>
         <div class="border-btm"></div>
       </li>
-      <li>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="ath-car-grds-items-ctlr">
-                <div class="ath-car-grds-items">
-                  <div class="ath-car-grd-item">
-                    <div class="ath-car-grd-item-img-ctlr">
-                      <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
-                      <div class="ath-car-grd-item-img">
-                        <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg">
-                        </div>
-                        <div class="ath-car-grd-item-catagory show-sm">
-                          <ul class="reset-list">
-                            <li class="black"><span>DIESEL</span></li>
-                            <li class="green"><span>€ 10.099,-</span></li>
-                          </ul>
-                        </div>
-                        <div class="img-overlay">
-                          <div class="ath-cgi-hover">
-                            <div class="ath-cgi-hover-img">
-                              <img src="<?php echo THEME_URI; ?>/assets/images/ftr-logo.png">
-                            </div>
-                            <div class="ath-cgi-hover-des">
-                              <a href="#">Alle details bekijken ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ath-car-grd-item-des hide-sm">
-                      <h4 class="ath-car-grd-item-des-title"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
-                      <p>Nette Caddy afkomstig uit de lease. Zeer netjes van binnen en buiten.</p>
-                      <p>Auto is voorzien van diverse optie’s waaronder airco, xenon, electrische ramen, vergr. op afstandsbediening, sortimo opbergsysteem en trekhaak.</p>
-                      <div class="ath-car-grd-item-catagory">
-                        <ul class="reset-list">
-                          <li><span>2012</span></li>
-                          <li class="black"><span>DIESEL</span></li>
-                          <li class="navyblue"><span>139.000 KM </span></li>
-                          <li class="green"><span>€ 10.099,-</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="border-btm"></div>
-      </li>
-      <li>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="ath-car-grds-items-ctlr">
-                <div class="ath-car-grds-items">
-                  <div class="ath-car-grd-item">
-                    <div class="ath-car-grd-item-img-ctlr">
-                      <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
-                      <div class="ath-car-grd-item-img">
-                        <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="<?php echo THEME_URI; ?>/assets/images/ath-car-grd-item-img-01.jpg">
-                        </div>
-                        <div class="ath-car-grd-item-catagory show-sm">
-                          <ul class="reset-list">
-                            <li class="black"><span>DIESEL</span></li>
-                            <li class="green"><span>€ 10.099,-</span></li>
-                          </ul>
-                        </div>
-                        <div class="img-overlay">
-                          <div class="ath-cgi-hover">
-                            <div class="ath-cgi-hover-img">
-                              <img src="<?php echo THEME_URI; ?>/assets/images/ftr-logo.png">
-                            </div>
-                            <div class="ath-cgi-hover-des">
-                              <a href="#">Alle details bekijken ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ath-car-grd-item-des hide-sm">
-                      <h4 class="ath-car-grd-item-des-title"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
-                      <p>Nette Caddy afkomstig uit de lease. Zeer netjes van binnen en buiten.</p>
-                      <p>Auto is voorzien van diverse optie’s waaronder airco, xenon, electrische ramen, vergr. op afstandsbediening, sortimo opbergsysteem en trekhaak.</p>
-                      <div class="ath-car-grd-item-catagory">
-                        <ul class="reset-list">
-                          <li><span>2012</span></li>
-                          <li class="black"><span>DIESEL</span></li>
-                          <li class="navyblue"><span>139.000 KM </span></li>
-                          <li class="green"><span>€ 10.099,-</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+      <?php endwhile; ?>
     </ul>
   </div>
   <div class="ath-car-btn">
@@ -317,13 +248,14 @@
         <div class="col-md-12">
           <div class="ath-car-btn-ctlr">
             <div class="ath-car-btn-inr">
-              <em><a href="#">Bekijk alle 57 occasions -></a></em>
+              <em><a href="<?php echo esc_url( home_url('auto-aanbod') );?>">Bekijk alle <?php echo $carofferCount; ?> occasions -></a></em>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <?php endif; wp_reset_postdata(); ?>
 </section>
 <?php 
   $microcars = get_field('microcarssec', HOMEID);

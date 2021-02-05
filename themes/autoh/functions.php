@@ -23,6 +23,8 @@ if( !function_exists('cbv_theme_setup') ){
 			add_theme_support('category-thumbnails');
 		}
         add_image_size( 'hbloggrid', 374, 370, true );
+        add_image_size( 'gallery', 836, 580, true );
+        add_image_size( 'galleryThumb', 268, 186, true );
 
         
 		
