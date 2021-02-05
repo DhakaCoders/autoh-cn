@@ -5,6 +5,8 @@
 */
 get_header();
 $thisID = get_the_ID();
+
+
 ?>
 
 
@@ -73,15 +75,22 @@ $thisID = get_the_ID();
 
     <?php 
 
-        $args = array(  
-          'post_type' => 'car_offers',
-          'posts_per_page' => -1,
-          'post_status' => 'publish',
-          'posts_per_page' => 6, 
-          /*'orderby’ => 'title', 
-          'order’ => 'ASC', */
-        );
-        $loop = new WP_Query( $args ); 
+      $logoObj = get_field('ftlogo', 'options');
+      if( is_array($logoObj) ){
+        $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+      }else{
+        $logo_tag = '';
+      }
+
+      $args = array(  
+        'post_type' => 'car_offers',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'posts_per_page' => 6, 
+        /*'orderby’ => 'title', 
+        'order’ => 'ASC', */
+      );
+      $loop = new WP_Query( $args ); 
 
      ?>
     <div class="ath-car-grds">
@@ -98,24 +107,38 @@ $thisID = get_the_ID();
                         <h4 class="ath-car-grd-item-des-title show-sm"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                         <div class="ath-car-grd-item-img">
                           <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
+
                           <?php if ( has_post_thumbnail() ): ?>
                           <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php the_post_thumbnail();?>');">
                               <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                           </div>
                           <?php endif; ?>
+
+                          <?php 
+                              $Specifications = get_field('specifications');
+
+                              if( have_rows('Specifications') ): //parent group field
+                                while( have_rows('Specifications') ): the_row(); 
+                                  $year = get_sub_field('year');
+                                  $fuel_type = get_sub_field('fuel_type');
+                                  $km = get_sub_field('km');
+                                  $price = get_sub_field('price');
+                            ?>
                           <div class="ath-car-grd-item-catagory show-sm">
                             <ul class="reset-list">
-                              <li class="black"><span>DIESEL</span></li>
-                              <li class="green"><span>€ 10.099,-</span></li>
+                              <?php if( !empty($fuel_type) ) printf('<li class="black"><span>%s</span></li>', $fuel_type); ?>
+                              <?php if( !empty($price) ) printf('<li class="green"><span>%s ,-</span></li>', $price); ?>
                             </ul>
                           </div>
+                          <?php endwhile; endif; ?>
+
                           <div class="img-overlay">
                             <div class="ath-cgi-hover">
                               <div class="ath-cgi-hover-img">
-                                <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
+                                <?php echo $logo_tag; ?>
                               </div>
                               <div class="ath-cgi-hover-des">
-                                <a href="#">Alle details bekijken ></a>
+                                <a href="<?php the_permalink(); ?>">Alle details bekijken ></a>
                               </div>
                             </div>
                           </div>
@@ -127,14 +150,22 @@ $thisID = get_the_ID();
                         <?php the_excerpt(); ?>
                         <div class="ath-car-grd-item-catagory">
                           <?php 
-                            $year = get_sub_field('link');
+                            $Specifications = get_field('specifications');
+
+                            if( have_rows('Specifications') ): //parent group field
+                              while( have_rows('Specifications') ): the_row(); 
+                                $year = get_sub_field('year');
+                                $fuel_type = get_sub_field('fuel_type');
+                                $km = get_sub_field('km');
+                                $price = get_sub_field('price');
                           ?>
                           <ul class="reset-list">
-                            <li><span>2012</span></li>
-                            <li class="black"><span>DIESEL</span></li>
-                            <li class="navyblue"><span>139.000 KM </span></li>
-                            <li class="green"><span>€ 10.099,-</span></li>
+                            <?php if( !empty($year) ) printf('<li><span>%s</span></li>', $year); ?>
+                            <?php if( !empty($fuel_type) ) printf('<li class="black"><span>%s</span></li>', $fuel_type); ?>
+                            <?php if( !empty($km) ) printf('<li class="navyblue"><span>%s KM</span></li>', $km); ?>
+                            <?php if( !empty($price) ) printf('<li class="green"><span>%s ,-</span></li>', $price); ?>
                           </ul>
+                          <?php endwhile; endif; ?>
                         </div>
                       </div>
                     </div>
