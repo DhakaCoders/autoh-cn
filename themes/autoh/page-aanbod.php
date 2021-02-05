@@ -8,7 +8,7 @@ get_header();
 
 
 <section class="banner-sec">
-  <div class="banner-cntlr inline-bg clearfix" style="background-image: url('assets/images/banner.jpg');"> </div> 
+  <div class="banner-cntlr inline-bg clearfix" style="background-image: url('<?php echo THEME_URI;?>/assets/images/banner.jpg');"> </div> 
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -73,8 +73,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -85,7 +85,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>
@@ -127,8 +127,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -139,7 +139,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>
@@ -181,8 +181,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -193,7 +193,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>
@@ -235,8 +235,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -247,7 +247,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>
@@ -289,8 +289,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -301,7 +301,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>
@@ -343,8 +343,8 @@ get_header();
                       <h4 class="ath-car-grd-item-des-title show-sm"><a href="#">Volkswagen Caddy 1,6 TDI</a></h4>
                       <div class="ath-car-grd-item-img">
                         <a href="#" class="overlay-link"></a>
-                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('assets/images/ath-car-grd-item-img-01.jpg');">
-                            <img src="assets/images/ath-car-grd-item-img-01.jpg">
+                        <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg');">
+                            <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                         </div>
                         <div class="ath-car-grd-item-catagory show-sm">
                           <ul class="reset-list">
@@ -355,7 +355,7 @@ get_header();
                         <div class="img-overlay">
                           <div class="ath-cgi-hover">
                             <div class="ath-cgi-hover-img">
-                              <img src="assets/images/ftr-logo.png">
+                              <img src="<?php echo THEME_URI;?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
                               <a href="#">Alle details bekijken ></a>

@@ -3,18 +3,23 @@
   $thisID = get_the_ID();
 ?>
 
+
+<?php 
+  $homebanner = get_field('homebanner', HOMEID);
+  if($homebanner):
+    $homebanner_src = !empty($homebanner)? cbv_get_image_src( $homebanner, 'full' ): '';
+?>
 <section class="banner-sec has-banner">
-  <div class="banner-bg inline-bg clearfix" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/banner.jpg');"></div> 
+  <div class="banner-bg inline-bg clearfix" style="background-image: url(<?php echo $homebanner_src; ?>);"></div> 
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="banner-desc clearfix">
-            <h1 class="banner-title">Auto Aanbod</h1>
-          </div>
         </div>
       </div>
     </div>   
 </section>
+
+<?php endif; ?>
 
 <section class="company-sec">
   <div class="container">
@@ -95,28 +100,21 @@
               if( !empty($ws_description)) echo wpautop($ws_description); 
             ?>
           </div>
+
+          <?php 
+            $quick_links = get_field('quick_links', HOMEID);
+                if( $quick_links ):
+          ?>
           <div class="Workshop-tags">
             <ul class="reset-list">
+              <?php foreach( $quick_links as $quick_link ): ?>
               <li>
-                <a href="#">APK Keuring</a>
+                 <?php printf('<a href="%s">%s</a>', $quick_link['wsql_url'], $quick_link['link_text'] ); ?>
               </li>
-              <li>
-                <a href="#">Onderhoud</a>
-              </li>
-              <li>
-                <a href="#">Diagnose</a>
-              </li>
-              <li>
-                <a href="#">Onderdelen</a>
-              </li>
-              <li>
-                <a href="#">Banden / Uitlijnen</a>
-              </li>
-              <li>
-                <a href="#">Winterbanden / opslag</a>
-              </li>
+              <?php endforeach; ?>
             </ul>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
