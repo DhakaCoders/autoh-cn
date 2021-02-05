@@ -108,8 +108,10 @@ $thisID = get_the_ID();
                         <div class="ath-car-grd-item-img">
                           <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
 
-                          <?php if ( has_post_thumbnail() ): ?>
-                          <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php the_post_thumbnail();?>');">
+                          <?php if ( has_post_thumbnail() ):
+                              $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+                           ?>
+                          <div class="ath-car-grd-item-img-inr inline-bg" style="background: url('<?php echo $post_thumbnail[0]; ?>');">
                               <img src="<?php echo THEME_URI;?>/assets/images/ath-car-grd-item-img-01.jpg">
                           </div>
                           <?php endif; ?>
