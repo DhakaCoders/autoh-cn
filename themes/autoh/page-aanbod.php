@@ -10,35 +10,7 @@ $thisID = get_the_ID();
 ?>
 
 
-<section class="banner-sec">
-  <div class="banner-cntlr inline-bg clearfix" style="background-image: url('<?php echo THEME_URI;?>/assets/images/banner.jpg');"> </div> 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="banner-desc clearfix">
-            <h1 class="banner-title">Auto Aanbod</h1>
-          </div>
-        </div>
-      </div>
-    </div>   
-</section>
-
-<section class="breadcrumbs-sec">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="breadcrumbs-cntlr">
-          <ul class="reset-list">
-            <li><a href="#">home</a></li>
-            <li class="active"><a href="#">auto aanbod</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<?php get_template_part('templates/pagebanner'); ?>
 
 
 <div class="aanbod-ctlr">
