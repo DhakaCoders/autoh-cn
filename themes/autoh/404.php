@@ -1,7 +1,6 @@
 <?php
 get_header();
 ?>
-
 <section class="main-content page-404-wrp">
     <div class="container">
         <div class="row">
@@ -14,7 +13,6 @@ get_header();
         </div>
     </div>
 </section><!-- end of main content -->
-
 <?php 
   get_footer();
 ?>

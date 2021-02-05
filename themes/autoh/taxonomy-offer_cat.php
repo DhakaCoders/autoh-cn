@@ -1,9 +1,6 @@
 <?php 
-/*
-  Template Name: Car offer 
-*/
 get_header();
-$thisID = get_the_ID();
+$cat = get_queried_object();
 get_template_part('templates/pagebanner'); 
 ?>
 <div class="aanbod-ctlr">
@@ -12,24 +9,18 @@ get_template_part('templates/pagebanner');
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <?php 
-              $co_title = get_field('co_title', $thisID);
-              $co_description = get_field('co_description', $thisID);
-            ?>
             <div class="ath-car-offer-enty-hdr-ctlr">
               <div class="ath-car-offer-enty-hdr-inr">
                 <?php 
-                  if( !empty($co_title) ) printf('<h2 class="ath-coeh-title">%s</h2>', $co_title);
-                  if( !empty($co_description)) echo wpautop($co_description); 
+                  if( !empty($cat->name) ) printf('<h2 class="ath-coeh-title">%s</h2>', $cat->name);
+                  if( !empty($cat->description)) echo wpautop($cat->description); 
                 ?>
-
                 <?php 
                   $terms = get_terms( array(
                     'taxonomy' => 'offer_cat',
                     'hide_empty' => false,
                     'parent' => 0
                   ) );
-                  
                 ?>
                 <?php if( $terms ): ?>
                 <div class="ath-car-offer-link">
@@ -37,8 +28,10 @@ get_template_part('templates/pagebanner');
                   <ul class="reset-list">
                     <?php
                     foreach( $terms as $term ):
+                      if($term->term_id != $cat->term_id):
                     ?>
                     <li><a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a></li>
+                    <?php endif; ?>
                     <?php endforeach; ?>
 
                   </ul>
@@ -67,6 +60,13 @@ get_template_part('templates/pagebanner');
         'orderby' => 'date',
         'order' => 'ASC',
         'paged' => $paged,
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'offer_cat',
+            'field'    => 'term_id',
+            'terms'    => $cat->term_id,
+          )
+        )
       );
       $loop = new WP_Query( $args ); 
 
@@ -158,7 +158,4 @@ get_template_part('templates/pagebanner');
     </div>
   </section>
 </div>
-
-
-
 <?php  get_footer();?>

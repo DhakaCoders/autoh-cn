@@ -22,7 +22,7 @@ if( !function_exists('cbv_theme_setup') ){
 		if(function_exists('add_theme_support')) {
 			add_theme_support('category-thumbnails');
 		}
-        add_image_size( 'hbloggrid', 374, 370, true );
+        add_image_size( 'cargrid', 368, 266, true );
         add_image_size( 'gallery', 836, 580, true );
         add_image_size( 'galleryThumb', 268, 186, true );
 
@@ -214,8 +214,15 @@ if( !function_exists('cbv_custom_both_breadcrump')){
     }
 }
 
-
-
+function offer_cat_pagination($query) {
+    if (is_tax('offer_cat') && $query->is_main_query() && !is_admin() ) {
+        $query->set('post_type',array('car_offers'));
+        $query->set( 'posts_per_page', 6 );
+        $query->set( 'orderby', 'modified' );
+    }
+return $query;
+}
+add_filter('pre_get_posts','offer_cat_pagination');
 
 /**
 Debug->>

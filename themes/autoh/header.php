@@ -110,8 +110,8 @@
                   <span></span>
                   <span></span>
                 </div>
-                <strong class="humberger-icon-title">MENU</strong>
-                <strong class="humberger-cross-title">MENU SLUITEN</strong>
+                <strong class="humberger-icon-title"><?php _e( 'MENU', THEME_NAME ); ?></strong>
+                <strong class="humberger-cross-title"><?php _e( 'MENU SLUITEN', THEME_NAME ); ?></strong>
               </div>
               <nav class="main-nav">
                 <?php 

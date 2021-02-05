@@ -1,9 +1,5 @@
 <?php 
-  get_header(); 
-?>
-
-
-<?php 
+  get_header();  
   $homebanner = get_field('homebanner', HOMEID);
   if($homebanner):
     $homebanner_src = !empty($homebanner)? cbv_get_image_src( $homebanner, 'full' ): '';
@@ -43,7 +39,7 @@
       <div class="col-md-12">
         <div class="hm-contact-cntlr">
           <div class="hm-contact-desc">
-            <p><em>Contact met jouw autobedrijf!</em></p>
+            <p><em><?php _e( 'Contact met jouw autobedrijf!', THEME_NAME ); ?></em></p>
           </div>
           <div class="hm-contact-items">
             <ul class="reset-list">
@@ -179,11 +175,13 @@
   <div class="ath-car-grds">
     <ul class="reset-list">
       <?php 
+        $total_current_offer = $offerQuery->found_posts;
+        $i = 1;
         while ( $offerQuery->have_posts() ) : $offerQuery->the_post();
         $specs = get_field('car_specific', get_the_ID());  
         $imgID = get_post_thumbnail_id(get_the_ID());
-        $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): '';
-        $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): '';
+        $imgsrc = !empty($imgID)? cbv_get_image_src($imgID, 'cargrid'): '';
+        $imgtag = !empty($imgID)? cbv_get_image_tag($imgID, 'cargrid'): '';
       ?>
       <li>
         <div class="container-fluid">
@@ -212,7 +210,7 @@
                               <img src="<?php echo THEME_URI; ?>/assets/images/ftr-logo.png">
                             </div>
                             <div class="ath-cgi-hover-des">
-                              <a href="<?php the_permalink(); ?>">Alle details bekijken ></a>
+                              <a href="<?php the_permalink(); ?>"><?php _e( 'Alle details bekijken', THEME_NAME ); ?> ></a>
                             </div>
                           </div>
                         </div>
@@ -237,18 +235,19 @@
             </div>
           </div>
         </div>
-        <div class="border-btm"></div>
+        <?php if( $total_current_offer != $i ) echo '<div class="border-btm"></div>'; ?>
       </li>
-      <?php endwhile; ?>
+      <?php $i++; endwhile; ?>
     </ul>
   </div>
+
   <div class="ath-car-btn">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <div class="ath-car-btn-ctlr">
             <div class="ath-car-btn-inr">
-              <em><a href="<?php echo esc_url( home_url('auto-aanbod') );?>">Bekijk alle <?php echo $carofferCount; ?> occasions -></a></em>
+              <em><a href="<?php echo get_link_by_page_template( 'page-aanbod.php' );?>">Bekijk alle <?php echo $carofferCount; ?> occasions -></a></em>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 <?php 
 while( have_posts() ): the_post(); 
 $specs = get_field('car_specific', get_the_ID());
+$content = get_field('content', get_the_ID());
 ?>
 <div class="car-ctlr">
   <section class="car-entry-sec">
@@ -11,7 +12,7 @@ $specs = get_field('car_specific', get_the_ID());
         <div class="col-md-12">
           <div class="car-entry-sec-inr">
             <h2 class="ath-coeh-title"><?php the_title(); ?></h2>
-            <?php the_excerpt(); ?>
+            <?php if( !empty($content) ) echo wpautop( $content ); ?>
             <div class="ath-car-grd-item-catagory">
               <ul class="reset-list">
               <?php if( !empty($specs['co_year']) ) printf('<li><span>%s</span></li>', $specs['co_year']); ?>
