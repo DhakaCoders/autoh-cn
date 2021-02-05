@@ -1,6 +1,5 @@
 <?php 
   get_header(); 
-  $thisID = get_the_ID();
 ?>
 
 
@@ -86,8 +85,8 @@
   </div>
 </section>
 <?php 
-  $ws_title = get_field('ws_title', $thisID);
-  $ws_description = get_field('ws_description', $thisID);
+  $workshop = get_field('workshopsec', HOMEID);
+  if( $workshop ):
 ?>
 <section class="workshop-sec">
   <div class="container">
@@ -96,22 +95,25 @@
         <div class="Workshop-cntlr">
           <div class="workshop-desc">
             <?php 
-              if( !empty($ws_title) ) printf('<h2 class="Workshop-title fl-h2">%s</h2>', $ws_title);
-              if( !empty($ws_description)) echo wpautop($ws_description); 
+              if( !empty($workshop['title']) ) printf('<h2 class="Workshop-title fl-h2">%s</h2>', $workshop['title']);
+              if( !empty($workshop['description'])) echo wpautop($workshop['description']); 
             ?>
           </div>
 
           <?php 
-            $quick_links = get_field('quick_links', HOMEID);
-                if( $quick_links ):
+            $quick_links = $workshop['quick_links'];
+            if( $quick_links ):
           ?>
           <div class="Workshop-tags">
             <ul class="reset-list">
-              <?php foreach( $quick_links as $quick_link ): ?>
-              <li>
-                 <?php printf('<a href="%s">%s</a>', $quick_link['wsql_url'], $quick_link['link_text'] ); ?>
-              </li>
-              <?php endforeach; ?>
+              <?php 
+                foreach( $quick_links as $quick_link ):
+                $qlink = $quick_link['link'];
+                if( is_array( $qlink ) &&  !empty( $qlink['url'] ) ){
+                  printf('<li><a href="%s" target="%s">%s</a></li>', $qlink['url'], $qlink['target'], $qlink['title']); 
+                }
+                endforeach; 
+              ?>
             </ul>
           </div>
           <?php endif; ?>
@@ -120,14 +122,14 @@
     </div>
   </div>
 </section>
-
+<?php endif; ?>
 
 
 <?php 
-  $co_title = get_field('co_title', $thisID);
-  $co_description = get_field('co_description', $thisID);
+  $coffer = get_field('current_offer', HOMEID);
 ?>
 <section class="ath-car-offer">
+  <?php if( $coffer ): ?>
   <div class="ath-car-offer-enty-hdr">
     <div class="container-fluid">
       <div class="row">
@@ -135,8 +137,8 @@
           <div class="ath-car-offer-enty-hdr-ctlr">
             <div class="ath-car-offer-enty-hdr-inr">
               <?php 
-                if( !empty($co_title) ) printf('<h2 class="ath-coeh-title fl-h2">%s</h2>', $co_title);
-                if( !empty($co_description)) echo wpautop($co_description); 
+                if( !empty($coffer['title']) ) printf('<h2 class="ath-coeh-title fl-h2">%s</h2>', $coffer['title']);
+                if( !empty($coffer['description'])) echo wpautop($coffer['description']); 
               ?>
             </div>
           </div>
@@ -144,6 +146,7 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
   <div class="ath-car-grds">
     <ul class="reset-list">
       <li>
@@ -323,29 +326,29 @@
   </div>
 </section>
 <?php 
-  $mc_title = get_field('mc_title', $thisID);
-  $mc_description = get_field('mc_description', $thisID);
-  $mc_image = get_field('mc_image', $thisID);
+  $microcars = get_field('microcarssec', HOMEID);
+  if( $microcars ):
 ?>
 <section class="ath-microcar-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-6 order-2">
-        <?php if($mc_image): ?>
+        <?php if( !empty($microcars['image']) ): ?>
         <div class="ath-microcar-img">
-          <?php echo cbv_get_image_tag($mc_image, ''); ?>
+          <?php echo cbv_get_image_tag($microcars['image'], ''); ?>
         </div>
         <?php endif; ?>
       </div>
       <div class="col-md-6 order-1">
         <div class="ath-microcar-des">
           <?php 
-            if( !empty($mc_title) ) printf('<h2 class="ath-microcar-des-title">%s</h2>', $mc_title);
-            if( !empty($mc_description)) echo wpautop($mc_description); 
+            if( !empty($microcars['title']) ) printf('<h2 class="ath-microcar-des-title">%s</h2>', $microcars['title']);
+            if( !empty($microcars['description'])) echo wpautop($microcars['description']); 
           ?>
         </div>
       </div>
     </div>
   </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>
