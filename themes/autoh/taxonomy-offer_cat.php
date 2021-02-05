@@ -137,23 +137,26 @@ get_template_part('templates/pagebanner');
         </li>
         <?php endwhile; ?>
       </ul>
-      <?php 
-        $big = 999999999; // need an unlikely integer
-        echo paginate_links( array(
-          'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-          'format' => '?paged=%#%',
-          'current' => max( 1, get_query_var('paged') ),
-          'total' => $loop->max_num_pages,
-          'type'  => 'list',
-          'show_all' => false,
-          'prev_text' => 'Prev',
-          'next_text' => 'Next',
-          'type'      => 'list',
-          'end_size'  => 3,
-          'mid_size'  => 3,
-        ) ); 
-      ?>
+      <div class="post-pagi-ctlr">
+        <?php 
+          $big = 999999999; // need an unlikely integer
+          echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $loop->max_num_pages,
+            'type'  => 'list',
+            'show_all' => false,
+            'prev_text' => '<i class="fas fa-long-arrow-alt-left"></i>',
+            'next_text' => '<i class="fas fa-long-arrow-alt-right"></i>',
+            'type'      => 'list',
+            'end_size'  => 3,
+            'mid_size'  => 3,
+          ) ); 
+        ?>
+      </div>
       <?php else: ?>
+        <div class="no-results">No Results.</div>
       <?php endif; wp_reset_postdata();?>
     </div>
   </section>
