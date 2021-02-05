@@ -8,15 +8,15 @@ $('.navbar-toggle').on('click', function(){
 	$('#mobile-nav').slideToggle(300);
 });
 
+if(windowWidth >= 992){
+  $( "li.menu-item-has-children" ).each(function( index ) {
+    $(this).append('<div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu"><ul> </ul></div></div></div></div></div>');
+    var subUl = $(this).find('.sub-menu').html();
+    $(this).find('.mega-menu ul').append(subUl);
+    
+  });
 
-$( "li.menu-item-has-children" ).each(function( index ) {
-  $(this).append('<div class="mega-menu-cntrl"><div class="container"><div class="row"><div class="col-md-12"><div class="mega-menu"><ul> </ul></div></div></div></div></div>');
-  var subUl = $(this).find('.sub-menu').html();
-  $(this).find('.mega-menu ul').append(subUl);
-  
-});
-
-
+}
   
 //matchHeightCol
 if($('.mHc').length){
