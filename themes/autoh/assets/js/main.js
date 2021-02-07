@@ -179,7 +179,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
   }, false);
 })();
 
-/*noyon*/
 
   $('nav.main-nav > ul > li.menu-item-has-children').hover(function(){
     var offsetlft = $(this).offset().left;
@@ -193,7 +192,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
   });
 
-/*shariful*/
 
   if(windowWidth >= 767){
     if($('.ftr-top-rgt-gray-bg').length){
